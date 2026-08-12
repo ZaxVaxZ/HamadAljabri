@@ -21,7 +21,46 @@ abstract class BaseForm
     public static function configure(Schema $schema): Schema
     {
 		$origin = [
-				Hidden::make('origin')->default('No where'),
+			Hidden::make('origin')->default('No where'),
+			Select::make('locale')
+				->label('Language')
+				->options([
+					'en' => 'English',
+					'ar' => 'Arabic',
+				])
+				->default('ar')
+				->required(),
+			TextInput::make('title')
+				->columnSpanFull()
+				->required(),
+			Textarea::make('description')
+				->columnSpanFull(),
+		];
+		$mediatype = static::getMediaType();
+		$extra_fields = [
+			Hidden::make('content')
+				->default(''),
+			TextInput::make('link')
+				->required(),
+			Toggle::make('featured')
+				->default(false),
+		];
+		if ($mediatype == 'article' || $mediatype == 'interview')
+		{
+			$origin = [
+				TextInput::make('origin')->required(),
+				DatePicker::make('created_at')
+					->label('Publish date')
+					->default(now())
+					->native(false)
+					->displayFormat('d/m/Y'),
+				TextInput::make('title')
+					->columnSpanFull()
+					->required(),
+				Textarea::make('description')
+					->columnSpanFull(),
+			];
+			$extra_fields = [
 				Select::make('locale')
 					->label('Language')
 					->options([
@@ -30,50 +69,11 @@ abstract class BaseForm
 					])
 					->default('ar')
 					->required(),
-                TextInput::make('title')
-					->columnSpanFull()
-					->required(),
-                Textarea::make('description')
-                    ->columnSpanFull(),
-			];
-		$mediatype = static::getMediaType();
-		$extra_fields = [
-				Hidden::make('content')
-					->default(''),
 				TextInput::make('link')
 					->required(),
 				Toggle::make('featured')
 					->default(false),
 			];
-		if ($mediatype == 'article' || $mediatype == 'interview')
-		{
-			$origin = [
-					TextInput::make('origin')->required(),
-					DatePicker::make('created_at')
-						->label('Publish date')
-						->default(now())
-						->native(false)
-						->displayFormat('d/m/Y'),
-					TextInput::make('title')
-						->columnSpanFull()
-						->required(),
-					Textarea::make('description')
-						->columnSpanFull(),
-				];
-			$extra_fields = [
-					Select::make('locale')
-						->label('Language')
-						->options([
-							'en' => 'English',
-							'ar' => 'Arabic',
-						])
-						->default('ar')
-						->required(),
-					TextInput::make('link')
-						->required(),
-					Toggle::make('featured')
-						->default(false),
-				];
 		}
 		if ($mediatype == 'advert')
 		{
@@ -97,26 +97,26 @@ abstract class BaseForm
 		if ($mediatype == 'photo')
 		{
 			$origin = [
-					TextInput::make('origin')
-						->label('Year')
-						->numeric()
-						->minValue(1950)
-						->maxValue(now()->year)
-						->default(now()->year),
-					Hidden::make('locale')
-						->default('ar'),
-					TextInput::make('title')
-						->columnSpanFull()
-						->required(),
-				];
+				Hidden::make('origin')->default('No where'),
+				DatePicker::make('created_at')
+					->label('Publish date')
+					->default(now())
+					->native(false)
+					->displayFormat('d/m/Y'),
+				Hidden::make('locale')
+					->default('ar'),
+				TextInput::make('title')
+					->columnSpanFull()
+					->required(),
+			];
 			$extra_fields = [
-					Hidden::make('content')
-						->default(''),
-					Hidden::make('link')
-						->default('https://osamakadi.com'),
-					Hidden::make('featured')
-						->default(false),
-				];
+				Hidden::make('content')
+					->default(''),
+				Hidden::make('link')
+					->default('https://osamakadi.com'),
+				Hidden::make('featured')
+					->default(false),
+			];
 		}
         return $schema
             ->components([
