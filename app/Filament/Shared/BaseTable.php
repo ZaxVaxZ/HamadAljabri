@@ -94,7 +94,6 @@ abstract class BaseTable
 				TextColumn::make('created_at')
 					->label('Publish date')
 					->date()
-					->toggleable(isToggledHiddenByDefault: true)
 					->sortable()
 			];
 		}
