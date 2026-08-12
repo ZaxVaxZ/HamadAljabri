@@ -91,8 +91,10 @@ abstract class BaseTable
 						'class' => $record->isRTL() ? 'text-right' : 'text-left',
 					])
 					->searchable(),
-				TextColumn::make('origin')
-					->label('Year')
+				TextColumn::make('created_at')
+					->label('Publish date')
+					->date()
+					->toggleable(isToggledHiddenByDefault: true)
 					->sortable()
 			];
 		}
