@@ -60,20 +60,48 @@ abstract class BaseForm
 				Textarea::make('description')
 					->columnSpanFull(),
 			];
-			$extra_fields = [
-				Select::make('locale')
-					->label('Language')
-					->options([
-						'en' => 'English',
-						'ar' => 'Arabic',
-					])
-					->default('ar')
-					->required(),
-				TextInput::make('link')
-					->required(),
-				Toggle::make('featured')
-					->default(false),
-			];
+			if ($mediatype == 'article')
+			{
+				$extra_fields = [
+					FileUpload::make('content')
+						->label('Article PDF')
+						->disk('public')
+						->directory('images')
+						->visibility('public')
+						->maxSize(20480)
+						->validationMessages([
+							'max' => 'File must not exceed 5 MB.',
+						]),
+					TextInput::make('link'),
+					Select::make('locale')
+						->label('Language')
+						->options([
+							'en' => 'English',
+							'ar' => 'Arabic',
+						])
+						->default('ar')
+						->required(),
+					Toggle::make('featured')
+						->default(false),
+				];
+			}
+			else
+			{
+				$extra_fields = [
+					Select::make('locale')
+						->label('Language')
+						->options([
+							'en' => 'English',
+							'ar' => 'Arabic',
+						])
+						->default('ar')
+						->required(),
+					TextInput::make('link')
+						->required(),
+					Toggle::make('featured')
+						->default(false),
+				];
+			}
 		}
 		if ($mediatype == 'advert')
 		{
