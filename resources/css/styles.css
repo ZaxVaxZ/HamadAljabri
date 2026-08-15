@@ -1,0 +1,200 @@
+/*---------------------------------------
+CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
+:root {
+
+}
+
+@font-face {
+    font-family: 'BoldLettering';
+    src: url('../fonts/zt-nature.bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CoolLettering';
+    src: url('../fonts/zt-nature.regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,a {
+	font-family: 'CoolLettering', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*---------------------------------------
+NAVBAR 
+-----------------------------------------*/
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: fit-content;
+	padding: 32px;
+	padding-bottom: 0;
+	z-index: 100;
+}
+
+@media (max-width: 767.20px)
+{
+	.navbar {
+		padding: 20px;
+		background: rgba(0, 0, 0, 0.5);
+	}
+}
+
+.navlinks {
+	background: rgba(0, 0, 0, 0.5);
+	height: 50px;
+	padding: 0 10px 0 10px;
+	width: fit-content;
+}
+
+.mobile-navlinks {
+	padding-top: 20px;
+}
+
+.mobile-navlinks .nav-item {
+	font-size: 18px;
+}
+
+.mobile-navlinks .contact-btn {
+	width: 100px;
+	height: 45px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.nav-item {
+	color: white;
+	font-size: 12px;
+	padding-inline: 10px;
+	padding-block: 8px;
+}
+
+.nav-item:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-item.active {
+	color: black;
+	background-color: white;
+}
+
+.logo-text {
+	font-family: 'BoldLettering', sans-serif;
+	font-size: 30px;
+	color: white;
+	text-shadow: 1px  1px 0 #000;
+	cursor: pointer;
+}
+
+.contact-btn {
+	all: unset;
+	height: 50px;
+	width: 120px;
+	text-align: center;
+	font-family: 'CoolLettering', sans-serif;
+	background-color: yellow;
+	font-size: 14px;
+}
+
+/*---------------------------------------
+MOBILE DROPDOWN NAV
+-----------------------------------------*/
+
+.navmenu-bars {
+	padding: 0;
+	height: 42px;
+	cursor: pointer;
+	z-index: 110;
+}
+
+.navmenu-bars:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 4px;
+    background: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* X state */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+/*---------------------------------------
+HERO 
+-----------------------------------------*/
+
+.hero {
+	position: sticky;
+	width: 100%;
+	height: auto;
+	max-height: 700px;
+	overflow: hidden;
+	top: 0;
+	z-index: -1;
+}
+
+.herovideo {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.temporary {
+	position: relative;
+	background-color: white;
+	display: block;
+}

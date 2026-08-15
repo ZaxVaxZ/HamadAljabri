@@ -1,3 +1,7 @@
+<script>
+		window.__content = @json($recs);
+	</script>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
