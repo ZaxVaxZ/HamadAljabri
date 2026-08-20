@@ -11,13 +11,13 @@
 
 			<div id="socials" class="col-lg-4 col-md-6 col-12" style="{{ app()->getLocale() == 'ar' ? 'padding-right: 30px;' : 'padding-left: 40px;' }}">
 				<div class="col">
-					<a href="mailto:osama@osamakadi.com" class="d-flex flex-row align-items-center mb-2 text-white" aria-label="{{ __('messages.contactwith') }} {{ __('messages.name')  }} Email">
+					<a href="mailto:osama@hamadaljabri.com" class="d-flex flex-row align-items-center mb-2 text-white" aria-label="{{ __('messages.contactwith') }} {{ __('messages.name')  }} Email">
 						<i class="fa-solid fa-envelope"></i>
-						<span style="font-size: 18px;"><strong>osama@osamakadi.com</strong></span>
+						<span style="font-size: 18px;"><strong>osama@hamadaljabri.com</strong></span>
 					</a>
-					<a target="_blank" href="https://youtube.com/@osamakadi2064" class="d-flex flex-row align-items-center mb-2 text-white" aria-label="{{ __('messages.name')  }} Youtube">
+					<a target="_blank" href="https://youtube.com/@hamadaljabri2064" class="d-flex flex-row align-items-center mb-2 text-white" aria-label="{{ __('messages.name')  }} Youtube">
 						<i class="fa-brands fa-youtube"></i>
-						<span style="font-size: 18px;"><strong>@osamakadi2064</strong></span>
+						<span style="font-size: 18px;"><strong>@hamadaljabri2064</strong></span>
 					</a>
 					<a target="_blank" href="https://facebook.com/osama.kadi.94" class="d-flex flex-row align-items-center mb-2 text-white" aria-label="{{ __('messages.contactwith') }} {{ __('messages.name')  }} Facebook">
 						<i class="fa-brands fa-square-facebook"></i>

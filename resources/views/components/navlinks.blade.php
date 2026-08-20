@@ -29,8 +29,8 @@
 		<a class="nav-item" href="#articles" aria-label="articles">
 			Articles
 		</a>
-		<button class="contact-btn">
+		<a class="nav-item" href="#contact" aria-label="contact">
 			Contact
-		</button>
+		</a>
 	</div>
 @endif

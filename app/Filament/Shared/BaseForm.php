@@ -141,7 +141,7 @@ abstract class BaseForm
 				Hidden::make('content')
 					->default(''),
 				Hidden::make('link')
-					->default('https://osamakadi.com'),
+					->default('https://hamadaljabri.com'),
 				Hidden::make('featured')
 					->default(false),
 			];

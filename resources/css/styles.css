@@ -1,22 +1,28 @@
 /*---------------------------------------
-CUSTOM PROPERTIES ( VARIABLES )             
+CUSTOM PROPERTIES ( VARIABLES )
 -----------------------------------------*/
 :root {
-
+	--fg-primary: white;
+	--bg-primary: #202020;
+	--bg-secondary: #101010;
+	--pf-ink: #2b2620;
+	--pf-accent: #b3492e;
+	--pf-paper: #f4ecd8;
+	--pf-paper-dark: #e6dabd;
 }
 
 @font-face {
-    font-family: 'BoldLettering';
-    src: url('../fonts/zt-nature.bold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'BoldLettering';
+	src: url('../fonts/zt-nature.bold.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'CoolLettering';
-    src: url('../fonts/zt-nature.regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'CoolLettering';
+	src: url('../fonts/zt-nature.regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 h1,h2,h3,h4,h5,h6,p,span,a {
@@ -32,10 +38,18 @@ a {
 body {
 	margin: 0;
 	padding: 0;
+	background-color: var(--bg-primary);
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	color: var(--fg-primary);
+}
+
+section {
+	padding-inline: 20px;
+	padding-block: 50px;
+	background-color: var(--bg-primary);
 }
 
 /*---------------------------------------
@@ -53,14 +67,6 @@ NAVBAR
 	z-index: 100;
 }
 
-@media (max-width: 767.20px)
-{
-	.navbar {
-		padding: 20px;
-		background: rgba(0, 0, 0, 0.5);
-	}
-}
-
 .navlinks {
 	background: rgba(0, 0, 0, 0.5);
 	height: 50px;
@@ -69,18 +75,11 @@ NAVBAR
 }
 
 .mobile-navlinks {
-	padding-top: 20px;
+	padding-block: 20px;
 }
 
 .mobile-navlinks .nav-item {
 	font-size: 18px;
-}
-
-.mobile-navlinks .contact-btn {
-	width: 100px;
-	height: 45px;
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 .nav-item {
@@ -103,7 +102,7 @@ NAVBAR
 	font-family: 'BoldLettering', sans-serif;
 	font-size: 30px;
 	color: white;
-	text-shadow: 1px  1px 0 #000;
+	text-shadow: 1px 1px 0 #000;
 	cursor: pointer;
 }
 
@@ -113,7 +112,8 @@ NAVBAR
 	width: 120px;
 	text-align: center;
 	font-family: 'CoolLettering', sans-serif;
-	background-color: yellow;
+	color: black;
+	background-color: white;
 	font-size: 14px;
 }
 
@@ -123,6 +123,7 @@ MOBILE DROPDOWN NAV
 
 .navmenu-bars {
 	padding: 0;
+	margin: 0;
 	height: 42px;
 	cursor: pointer;
 	z-index: 110;
@@ -133,44 +134,44 @@ MOBILE DROPDOWN NAV
 }
 
 .menu-toggle {
-    width: 30px;
-    height: 30px;
-    border: none;
-    background: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    cursor: pointer;
+	width: 30px;
+	height: 30px;
+	border: none;
+	background: none;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 6px;
+	cursor: pointer;
 }
 
 .menu-toggle span {
-    width: 100%;
-    height: 4px;
-    background: white;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+	width: 100%;
+	height: 4px;
+	background: white;
+	transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* X state */
 .menu-toggle.active span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+	transform: translateY(10px) rotate(45deg);
 }
 
 .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+	transform: translateY(-10px) rotate(-45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+	opacity: 0;
 }
 
 .mobile-menu {
-    display: none;
+	display: none;
 }
 
 .mobile-menu.active {
-    display: block;
+	display: block;
 }
 
 /*---------------------------------------
@@ -193,8 +194,426 @@ HERO
 	object-fit: cover;
 }
 
+.hero-txt {
+	position: absolute;
+	bottom: 10%;
+	left: 40px;
+}
+
+.hero-txt p, h1 {
+	color: white;
+	font-family: 'BoldLettering', sans-serif;
+	text-shadow:
+		-5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.hero-txt p {
+	font-size: 32px;
+}
+
+.hero-txt h1 {
+	font-size: 76px;
+}
+
+.hero-txt i {
+	font-size: 40px;
+}
+
+.hover {
+    animation: hover 2s ease-in-out infinite;
+}
+
+@keyframes hover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 .temporary {
 	position: relative;
-	background-color: white;
 	display: block;
+	background-color: var(--bg-secondary);
 }
+
+.tempytext {
+	color: white;
+	background-color: var(--bg-secondary);
+}
+
+/*---------------------------------------
+ABOUT
+-----------------------------------------*/
+
+.about-section {
+	padding-top: 100px;
+	padding-bottom: 0;
+}
+
+.about-left {
+	position: relative;
+	height: auto;
+}
+
+.self-bg {
+	position: absolute;
+	border-radius: 50%;
+	width: 75%;
+	aspect-ratio: 1 / 1;
+	left: 10%;
+	top: 0;
+	z-index: 1;
+	background: linear-gradient(to right, lightgray 20%, rgb(60, 60, 60));
+	box-shadow: 17px -17px 20px 5px black;
+	overflow: hidden;
+	padding-bottom: 60px;
+}
+
+.self-fg {
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: block;
+	z-index: 4;
+}
+
+.scroll-list {
+	padding-top: 70px;
+}
+
+.scroll-list li {
+    opacity: 0;
+    transform: translateX(-50px);
+	font-family: 'CoolLettering', sans-serif;
+	font-size: 32px;
+	margin-bottom: 20px;
+    animation: slide-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.scroll-list li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.scroll-list li:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.scroll-list li:nth-child(3) {
+    animation-delay: 0.30s;
+}
+
+.scroll-list li:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*---------------------------------------
+PAGE FLIP
+-----------------------------------------*/
+/* box-sizing kept local to the component, not a global * rule.
+   content-box on purpose: the original geometry assumes content-box math. */
+.scrollflip,
+.scrollflip *{
+  box-sizing:content-box;
+}
+
+.scrollflip{
+  position:relative;
+  --scroll-per-page: 70vh; /* scroll distance consumed by one page flip */
+}
+
+.scrollflip__pin{
+  position:sticky;
+  top:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+/* ================================================================
+   Reference stage: 680x480, matching the original #all/#page-flip
+   box model exactly (300x400 window + 40/40/40/340 padding).
+   Resize the whole effect uniformly with --pf-scale rather than
+   independent width/height — the curl math below is pixel-specific.
+   ================================================================ */
+.pf-stage-outer{
+  width:calc(680px * var(--pf-scale, 1));
+  height:calc(480px * var(--pf-scale, 1));
+  max-width:92vw;
+  position:relative;
+}
+.pf-stage{
+  width:680px;
+  height:480px;
+  position:relative;
+  transform:scale(var(--pf-scale, 1));
+  transform-origin:top left;
+}
+
+/* One .pf-window = one full flip unit (equivalent to the original
+   #page-flip). Stack several for a multi-page sequence; JS sets
+   --pf-progress (0..1) and z-index on each per its scroll segment. */
+.pf-window{
+  position:absolute;
+  top:0;
+  left:0;
+  width:300px;
+  height:400px;
+  padding:40px 40px 40px 340px;
+  overflow:hidden;
+  --pf-progress:0;
+}
+
+/* ---- shared math for the two outer rotators (r1 / r3) ---- */
+.pf-r{
+  position:absolute;
+  z-index:2;
+  transform-origin: calc(1315px + 255px * var(--pf-progress)) 500px;
+  transform:
+    translate(calc(-1030px - 255px * var(--pf-progress)), -500px)
+    rotate(calc(-32deg + 32deg * var(--pf-progress)));
+}
+
+.pf-canvas{
+  width:1285px;
+  height:1388px;
+  overflow:hidden;
+}
+
+/* p1 > div */
+.pf-canvas-inner--front{
+  position:relative;
+  width:285px;
+  height:388px;
+  background:var(--pf-paper);
+  transform-origin:285px 0;
+  transform:
+    translate(calc(1030px + 255px * var(--pf-progress)), 500px)
+    rotate(calc(32deg - 32deg * var(--pf-progress)));
+}
+
+/* p3 > div */
+.pf-canvas-inner--back{
+  position:relative;
+  width:285px;
+  height:388px;
+  background:var(--pf-paper);
+  transform-origin:0 0;
+  transform:
+    translate(calc(1255px - 255px * var(--pf-progress)), 500px)
+    rotate(calc(-32deg + 32deg * var(--pf-progress)));
+}
+
+/* p1 > div > div (fold edge shading) — positioned so it overlays
+   the content instead of pushing it around in normal flow */
+.pf-edge-fade{
+  position:absolute;
+  top:0; left:0;
+  width:10px;
+  height:388px;
+  background:linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
+  pointer-events:none;
+}
+/* p3 > div > div */
+.pf-edge-fade--right{
+  left:auto;
+  right:0;
+  width:9px;
+  height:388px;
+  background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.20));
+}
+
+/* p2 > div — the static revealed face underneath */
+.pf-page-face{
+  width:285px;
+  height:388px;
+  position:absolute;
+  z-index:1;
+  box-shadow:0 0 11px rgba(0,0,0,.5);
+  background:var(--pf-paper);
+}
+
+.pf-shadow{
+  width:285px;
+  height:388px;
+  position:absolute;
+  overflow:hidden;
+  z-index:3;
+}
+
+/* #s3 */
+.pf-shadow--s3{
+  transform-origin: calc(70px + 255px * var(--pf-progress)) 500px;
+  transform:
+    translate(calc(215px - 255px * var(--pf-progress)), -500px)
+    rotate(calc(-32deg + 32deg * var(--pf-progress)))
+    translate(40px, 0);
+}
+/* #sp3 */
+.pf-shadow-gradient--sp3{
+  width:calc(25px - 14px * var(--pf-progress));
+  height:1000px;
+  overflow:hidden;
+  background:linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
+}
+
+/* #s4 wraps #s2, fades out roughly twice as fast as the main flip */
+.pf-shadow--s4{
+  opacity: calc(1 - min(1, var(--pf-progress) * 2));
+}
+/* #s2 */
+.pf-shadow--s2{
+  transform-origin: calc(45px + 255px * var(--pf-progress)) 500px;
+  transform:
+    translate(calc(240px - 255px * var(--pf-progress)), -500px)
+    rotate(calc(-32deg + 32deg * var(--pf-progress)));
+}
+/* #sp2 */
+.pf-shadow-gradient--sp2{
+  width:15px;
+  height:1000px;
+  overflow:hidden;
+  background:linear-gradient(to left, rgba(0,0,0,.18), rgba(0,0,0,0));
+}
+
+/* readable content sitting on the revealed (p2) face */
+.pf-page-content{
+  padding:8% 9%;
+  height:100%;
+  position:relative;
+}
+.pf-kicker{
+  display:block;
+  font-size:.65rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--pf-accent);
+  margin-bottom:.6em;
+}
+.pf-heading{
+  margin:0 0 .4em;
+  font-weight:400;
+  font-size:1.2rem;
+  color:var(--pf-ink);
+}
+.pf-text{
+  margin:0;
+  font-size:.78rem;
+  line-height:1.6;
+  color:#4a4032;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .scrollflip__pin{ position:relative; height:auto; padding:4rem 0; }
+}
+
+@media (max-width: 767.20px)
+{
+	.navbar {
+		padding-inline: 20px;
+		padding-block: 10px;
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	.hero-txt {
+		bottom: 3%;
+	}
+
+	.hero-txt p {
+		font-size: 24px;
+	}
+	
+	.hero-txt h1 {
+		font-size: 57px;
+	}
+	
+	.hero-txt i {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 567.20px)
+{
+	.navbar {
+		padding-inline: 10px;
+		padding-block: 4px;
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	.navmenu-bars {
+		height: 24px;
+		margin-top: 3px;
+	}
+	
+	.menu-toggle {
+		height: 20px;
+		gap: 4px;
+	}
+	
+	.menu-toggle span {
+		height: 3px;
+	}
+
+	.menu-toggle.active span:nth-child(1) {
+		transform: translateY(7px) rotate(45deg);
+	}
+	
+	.menu-toggle.active span:nth-child(3) {
+		transform: translateY(-7px) rotate(-45deg);
+	}
+
+	.mobile-navlinks {
+		padding-top: 10px;
+	}
+
+	.mobile-navlinks .nav-item {
+		font-size: 10px;
+	}
+
+	.logo-text {
+		font-size: 20px;
+	}
+
+	.hero-txt {
+		bottom: 3%;
+		left: 5%;
+	}
+
+	.hero-txt p {
+		font-size: 16px;
+	}
+	
+	.hero-txt h1 {
+		font-size: 38px;
+	}
+	
+	.hero-txt i {
+		font-size: 20px;
+	}
+}
+
+/*
+576px: Small screens (landscape phones).
+768px: Medium screens (tablets).
+992px: Large screens (desktops).
+1200px: Extra large screens (large desktops).
+1400px: Extra extra large screens (enormous monitors).
+*/
