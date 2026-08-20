@@ -1,6 +1,6 @@
 <section class="about-section">
-	<div class="about d-flex flex-row">
-		<div class="about-right col-12 col-md-5">
+	<div class="d-block d-lg-flex">
+		<div class="about-right col-12 col-lg-5">
 			<ul class="scroll-list">
 				<li>Contect creator</li>
 				<li>Sports coach</li>
@@ -11,7 +11,7 @@
 				<li>My Message: Peaceful Coexistence</li>
 			</ul>
 		</div>
-		<div class="about-left col-12 col-md-7">
+		<div class="about-left col-12 col-lg-7 d-flex flex-row justify-content-center">
 			<div class="self-bg"></div>
 			<img class="self-fg" src="{{ Storage::url('images/HamadNoBg.png') }}" />
 		</div>

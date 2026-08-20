@@ -292,7 +292,7 @@ ABOUT
 	margin-bottom: 20px;
     animation: slide-in linear forwards;
     animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 20% cover 20%;
 }
 
 .scroll-list li:nth-child(1) {
@@ -525,6 +525,53 @@ PAGE FLIP
   .scrollflip__pin{ position:relative; height:auto; padding:4rem 0; }
 }
 
+@media (max-width: 1400px)
+{
+	.scroll-list li {
+		font-size: 26px;
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 1200px)
+{
+	.scroll-list {
+		padding-top: 40px;
+	}
+
+	.scroll-list li {
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 991.20px)
+{
+	.scroll-list {
+		padding-top: 30px;
+		padding-bottom: 70px;
+		padding-left: 80px;
+	}
+
+	.scroll-list li {
+		font-size: 30px;
+		margin-bottom: 15px;
+		opacity: 1;
+		transform: none;
+		animation: none;
+	}
+
+	.self-fg {
+		width: 80%;
+	}
+
+	.self-bg {
+		width: 60%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+}
+
 @media (max-width: 767.20px)
 {
 	.navbar {
@@ -548,13 +595,21 @@ PAGE FLIP
 	.hero-txt i {
 		font-size: 30px;
 	}
+
+	.scroll-list {
+		padding-top: 0 0 40px 0;
+	}
+
+	.scroll-list li {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
 }
 
 @media (max-width: 567.20px)
 {
 	.navbar {
 		padding-inline: 10px;
-		padding-block: 4px;
 		background: rgba(0, 0, 0, 0.5);
 	}
 
@@ -607,6 +662,10 @@ PAGE FLIP
 	
 	.hero-txt i {
 		font-size: 20px;
+	}
+
+	.scroll-list {
+		padding-left: 30px;
 	}
 }
 
