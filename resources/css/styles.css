@@ -52,6 +52,10 @@ section {
 	background-color: var(--bg-primary);
 }
 
+.dark-sect {
+	background-color: var(--bg-secondary);
+}
+
 /*---------------------------------------
 NAVBAR 
 -----------------------------------------*/
@@ -106,15 +110,20 @@ NAVBAR
 	cursor: pointer;
 }
 
-.contact-btn {
-	all: unset;
+.lang-btn {
 	height: 50px;
 	width: 120px;
 	text-align: center;
 	font-family: 'CoolLettering', sans-serif;
 	color: black;
 	background-color: white;
-	font-size: 14px;
+	font-size: 16px;
+	font-weight: 500px;
+	align-content: center;
+}
+
+.lang-btn i {
+	color: black;
 }
 
 /*---------------------------------------
@@ -292,7 +301,7 @@ ABOUT
 	margin-bottom: 20px;
     animation: slide-in linear forwards;
     animation-timeline: view();
-    animation-range: entry 20% cover 20%;
+    animation-range: entry 90% cover 22%;
 }
 
 .scroll-list li:nth-child(1) {
@@ -321,6 +330,33 @@ ABOUT
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/*---------------------------------------
+SERIES-SECTION
+-----------------------------------------*/
+
+.series-section .text-part {
+	padding: 50px;
+}
+
+.series-section img {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	object-position: 0% 0%;
+}
+
+.series-section h2 {
+	margin-bottom: 20px;
+}
+
+/*---------------------------------------
+FOOTER
+-----------------------------------------*/
+
+.site-footer {
+	padding-block: 60px;
 }
 
 /*---------------------------------------
@@ -550,7 +586,7 @@ PAGE FLIP
 	.scroll-list {
 		padding-top: 30px;
 		padding-bottom: 70px;
-		padding-left: 80px;
+		padding-inline-start: 80px;
 	}
 
 	.scroll-list li {
@@ -665,7 +701,7 @@ PAGE FLIP
 	}
 
 	.scroll-list {
-		padding-left: 30px;
+		padding-inline-start: 30px;
 	}
 }
 

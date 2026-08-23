@@ -1,4 +1,4 @@
-<div class="navbar align-items-start">
+<div class="navbar align-items-start" dir="ltr">
 	<div class="col-11 col-md-2" style="padding: 0;">
 		<a class="logo-text" href="/">HAMAD</a>
 	</div>
@@ -6,9 +6,7 @@
 		<x-navlinks />
 	</div>
 	<div class="col-2 d-none d-md-flex flex-row justify-content-end" style="padding: 0;">
-		<button class="contact-btn">
-			Contact
-		</button>
+		<x-lang-btn />
 	</div>
 	<div class="navmenu-bars col-1 d-flex d-md-none justify-content-center align-items-center">
 		<button

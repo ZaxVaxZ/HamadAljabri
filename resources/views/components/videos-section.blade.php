@@ -27,7 +27,7 @@
 	- Requires scroll-flipbook.css and scroll-flipbook.js.
 	============================================================
   -->
-  <section class="scrollflip" style="--scroll-per-page:80vh;">
+  <section class="scrollflip" style="--scroll-per-page:80vh;" dir="ltr">
 	<div class="scrollflip__pin">
 	  <div class="pf-stage-outer" style="--pf-scale:1;">
 		<div class="pf-stage">
