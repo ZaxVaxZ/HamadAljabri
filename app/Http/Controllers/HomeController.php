@@ -22,8 +22,8 @@ class HomeController
 			'رسالتي: عالم متسامح'
 		];
 		$pointersEN = [
-			'Contect creator',
-			'Sports coach',
+			'Content Creator',
+			'Sports Coach',
 			'Traveler and Adventurer',
 			'Specialized in Latin American Countries',
 			'Motivational Speaker',
