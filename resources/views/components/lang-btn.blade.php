@@ -6,6 +6,6 @@
         $scheme = parse_url($appUrl, PHP_URL_SCHEME);
 @endphp
 
-<a href="{{ $scheme }}://{{ app()->getLocale() == 'ar' ? 'en.' : ''  }}{{ $baseDomain . ($ret == 'true' ? '' : request()->getRequestUri())  }}" class="lang-btn" aria-label="{{ __('messages.switchlang') }}">
+<a href="{{ $scheme }}://{{ app()->getLocale() == 'ar' ? 'en.' : ''  }}{{ $baseDomain . ($ret == 'true' ? '' : request()->getRequestUri())  }}" class="lang-btn" aria-label="{{ __('messages.switchlang') }}" style="{{ app()->getLocale() == 'en' ? 'font-size: 16px;' : '' }}">
 	<i class="bi bi-globe"></i> {{ __('messages.lang') }}
 </a>

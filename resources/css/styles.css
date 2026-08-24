@@ -112,13 +112,13 @@ NAVBAR
 
 .lang-btn {
 	height: 50px;
-	width: 120px;
+	width: 100px;
 	text-align: center;
 	font-family: 'CoolLettering', sans-serif;
 	color: black;
 	background-color: white;
-	font-size: 16px;
-	font-weight: 500px;
+	font-size: 14px;
+	font-weight: 400px;
 	align-content: center;
 }
 
