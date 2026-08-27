@@ -3,7 +3,7 @@
 return [
 	'lang' => 'English',
 	'name' => 'حمد الجابري',
-    'aboutsection' => 'تعرف',
+    'aboutsection' => 'السيرة الذاتية',
     'about' => 'تعرف على',
     'books' => 'المؤلفات',
     'contact' => 'التواصل',
@@ -11,6 +11,9 @@ return [
 	'email' => 'عنوان البريد الإلكتروني',
     'interviews' => 'المقابلات',
 	'photos' => 'الصور',
+	'travel' => 'السفر والرحلات',
+	'media' => 'ميديا',
+	'contentcreation' => 'صناعة المحتوى',
     'articles' => 'المقالات',
     'latestarticles' => 'أحدث المقالات',
     'podcasts' => 'البودكاست',

@@ -1,14 +1,14 @@
 <div class="navbar align-items-start" dir="ltr">
-	<div class="col-11 col-md-2" style="padding: 0;">
+	<div class="col-11 col-lg-2" style="padding: 0;">
 		<a class="logo-text" href="/">HAMAD</a>
 	</div>
-	<div class="col-8 d-none d-md-flex flex-row justify-content-center" style="padding: 0;">
+	<div class="col-8 d-none d-lg-flex flex-row justify-content-center" style="padding: 0;">
 		<x-navlinks />
 	</div>
-	<div class="col-2 d-none d-md-flex flex-row justify-content-end" style="padding: 0;">
+	<div class="col-2 d-none d-lg-flex flex-row justify-content-end" style="padding: 0;">
 		<x-lang-btn />
 	</div>
-	<div class="navmenu-bars col-1 d-flex d-md-none justify-content-center align-items-center">
+	<div class="navmenu-bars col-1 d-flex d-lg-none justify-content-center align-items-center">
 		<button
 			class="menu-toggle"
 			type="button"

@@ -1,12 +1,18 @@
 @props(['type' => 'desktop'])
 
 @if($type == 'desktop')
-	<div class="navlinks d-none d-md-flex flex-row justify-content-between gap-4 align-items-center">
+	<div class="navlinks d-none d-lg-flex flex-row justify-content-between align-items-center" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 		<a class="nav-item active" href="#about" aria-label="about">
-			{{ __('messages.about') }}
+			{{ __('messages.aboutsection') }}
 		</a>
-		<a class="nav-item" href="#videos" aria-label="videos">
-			{{ __('messages.videos') }}
+		<a class="nav-item" href="#media" aria-label="media">
+			{{ __('messages.media') }}
+		</a>
+		<a class="nav-item" href="#travel" aria-label="travel">
+			{{ __('messages.travel') }}
+		</a>
+		<a class="nav-item" href="#contentcreation" aria-label="contentcreation">
+			{{ __('messages.contentcreation') }}
 		</a>
 		<a class="nav-item" href="#photos" aria-label="photos">
 			{{ __('messages.photos') }}

@@ -5,7 +5,7 @@
 		<div class="about-right col-12 col-lg-5">
 			<ul class="scroll-list">
 				@foreach($pointers as $pointer)
-					<li>
+					<li class="scroll-item" style="--i: {{ $loop->index }};">
 						{{ $pointer }}
 					</li>
 				@endforeach
