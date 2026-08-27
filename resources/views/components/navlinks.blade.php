@@ -5,14 +5,26 @@
 		<a class="nav-item active" href="#about" aria-label="about">
 			{{ __('messages.aboutsection') }}
 		</a>
-		<a class="nav-item" href="#media" aria-label="media">
+		<span class="nav-item" href="#contentcreation" aria-label="contentcreation">
+			{{ __('messages.contentcreation') }}
+			<div class="menu-dropdown">
+				<a>عالم حمد</a>
+				<a>خرائط i</a>
+				<a>عيال زايد</a>
+				<a>حمد والذكاء الاصطناعي</a>
+			</div>
+		</span>
+		<span class="nav-item">
 			{{ __('messages.media') }}
-		</a>
+			<div class="menu-dropdown">
+				<a>الأفلام التجريبية</a>
+				<a>المقابلات التلفزيونية</a>
+				<a>التوستماستر</a>
+				<a>الدورة التلفزيونية التدريبية</a>
+			</div>
+		</span>
 		<a class="nav-item" href="#travel" aria-label="travel">
 			{{ __('messages.travel') }}
-		</a>
-		<a class="nav-item" href="#contentcreation" aria-label="contentcreation">
-			{{ __('messages.contentcreation') }}
 		</a>
 		<a class="nav-item" href="#photos" aria-label="photos">
 			{{ __('messages.photos') }}
@@ -25,12 +37,24 @@
 		</a>
 	</div>
 @else
-	<div class="mobile-navlinks d-flex flex-column justify-content-between gap-1 align-items-start">
+	<div class="mobile-navlinks d-flex flex-column justify-content-between gap-1 align-items-start" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 		<a class="nav-item active" href="#about" aria-label="about">
-			{{ __('messages.about') }}
+			{{ __('messages.aboutsection') }}
 		</a>
-		<a class="nav-item" href="#videos" aria-label="videos">
-			{{ __('messages.videos') }}
+		<a class="nav-item" href="#contentcreation" aria-label="contentcreation">
+			{{ __('messages.contentcreation') }}
+		</a>
+		<span class="nav-item">
+			{{ __('messages.media') }}
+			<div class="menu-dropdown">
+				<a>الأفلام التجريبية</a>
+				<a>المقابلات التلفزيونية</a>
+				<a>التوستماستر</a>
+				<a>الدورة التلفزيونية التدريبية</a>
+			</div>
+		</span>
+		<a class="nav-item" href="#travel" aria-label="travel">
+			{{ __('messages.travel') }}
 		</a>
 		<a class="nav-item" href="#photos" aria-label="photos">
 			{{ __('messages.photos') }}
