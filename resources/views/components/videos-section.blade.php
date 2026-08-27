@@ -90,7 +90,7 @@
 					{{--<span class="pf-kicker">Page 3</span>
 					<h3 class="pf-heading">Keep scrolling</h3>
 					<p class="pf-text">Revealed after the first flip.</p>--}}
-					<img class="pf-img" src="{{ $s1->thumbnail }}" />
+					<img class="pf-img" src="{{ Storage::url($s1->thumbnail) }}" />
 				  </div>
 				  <div class="pf-edge-fade"></div>
 				</div>
@@ -115,7 +115,7 @@
 				{{--<span class="pf-kicker">Page 5</span>
 					<h3 class="pf-heading">Last flip</h3>
 					<p class="pf-text">After this, normal page scrolling resumes.</p>--}}
-					<img class="pf-img" src="{{ $s2->thumbnail }}" />
+					<img class="pf-img" src="{{ Storage::url($s2->thumbnail) }}" />
 			  </div>
 			</div>
   
@@ -138,7 +138,7 @@
 					{{--<span class="pf-kicker">Page 5</span>
 						<h3 class="pf-heading">Last flip</h3>
 						<p class="pf-text">After this, normal page scrolling resumes.</p>--}}
-						<img class="pf-img" src="{{ $s2->thumbnail }}" />
+						<img class="pf-img" src="{{ Storage::url($s2->thumbnail) }}" />
 				  </div>
 				  <div class="pf-edge-fade"></div>
 				</div>
@@ -163,7 +163,7 @@
 				{{--<span class="pf-kicker">Page 7</span>
 				<h3 class="pf-heading">Last flip</h3>
 				<p class="pf-text">After this, normal page scrolling resumes.</p>--}}
-				<img class="pf-img" src="{{ $s3->thumbnail }}" />
+				<img class="pf-img" src="{{ Storage::url($s3->thumbnail) }}" />
 			  </div>
 			</div>
   
