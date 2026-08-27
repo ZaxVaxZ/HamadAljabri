@@ -9,6 +9,7 @@ CUSTOM PROPERTIES ( VARIABLES )
 	--pf-accent: #b3492e;
 	--pf-paper: #f4ecd8;
 	--pf-paper-dark: #e6dabd;
+	--pf-scale: 1.4;
 }
 
 @font-face {
@@ -99,7 +100,7 @@ NAVBAR
 .menu-dropdown {
 	z-index: 5;
 	position: absolute;
-	top: 100%;             /* sits directly below the trigger */
+	top: 100%;	           /* sits directly below the trigger */
 	left: 50%;
 	margin-top: 8px;       /* small gap between trigger and menu */
 	width: 200px;
@@ -391,6 +392,16 @@ FOOTER
 	padding-block: 60px;
 }
 
+.site-footer ul {
+	font-size: 18px;
+}
+
+#footertitle {
+	font-size: 24px;
+	padding-bottom: 30px;
+	font-weight: 500;
+}
+
 /*---------------------------------------
 PAGE FLIP
 -----------------------------------------*/
@@ -398,199 +409,213 @@ PAGE FLIP
    content-box on purpose: the original geometry assumes content-box math. */
 .scrollflip,
 .scrollflip *{
-  box-sizing:content-box;
+	box-sizing:content-box;
 }
 
 .scrollflip{
-  position:relative;
-  --scroll-per-page: 70vh; /* scroll distance consumed by one page flip */
+	background-color: var(--bg-primary);
+	position:relative;
+	--scroll-per-page: 70vh; /* scroll distance consumed by one page flip */
 }
 
 .scrollflip__pin{
-  position:sticky;
-  top:0;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+	padding-top: 30px;
+	position:sticky;
+	top:0;
+	height:100vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	overflow:hidden;
 }
 
 /* ================================================================
-   Reference stage: 680x480, matching the original #all/#page-flip
-   box model exactly (300x400 window + 40/40/40/340 padding).
-   Resize the whole effect uniformly with --pf-scale rather than
-   independent width/height — the curl math below is pixel-specific.
-   ================================================================ */
+	 Reference stage: 680x480, matching the original #all/#page-flip
+	 box model exactly (300x400 window + 40/40/40/340 padding).
+	 Resize the whole effect uniformly with --pf-scale rather than
+	 independent width/height — the curl math below is pixel-specific.
+	 ================================================================ */
 .pf-stage-outer{
-  width:calc(680px * var(--pf-scale, 1));
-  height:calc(480px * var(--pf-scale, 1));
-  max-width:92vw;
-  position:relative;
+	width:calc(680px * var(--pf-scale, 1));
+	height:calc(480px * var(--pf-scale, 1));
+	max-width:92vw;
+	position:relative;
 }
 .pf-stage{
-  width:680px;
-  height:480px;
-  position:relative;
-  transform:scale(var(--pf-scale, 1));
-  transform-origin:top left;
+	width:680px;
+	height:480px;
+	position:relative;
+	transform:scale(var(--pf-scale, 1));
+	transform-origin:top left;
 }
 
 /* One .pf-window = one full flip unit (equivalent to the original
-   #page-flip). Stack several for a multi-page sequence; JS sets
-   --pf-progress (0..1) and z-index on each per its scroll segment. */
+	 #page-flip). Stack several for a multi-page sequence; JS sets
+	 --pf-progress (0..1) and z-index on each per its scroll segment. */
 .pf-window{
-  position:absolute;
-  top:0;
-  left:0;
-  width:300px;
-  height:400px;
-  padding:40px 40px 40px 340px;
-  overflow:hidden;
-  --pf-progress:0;
+	position:absolute;
+	top:0;
+	left:0;
+	width:300px;
+	height:400px;
+	padding:40px 40px 40px 340px;
+	overflow:hidden;
+	--pf-progress:0;
 }
 
 /* ---- shared math for the two outer rotators (r1 / r3) ---- */
 .pf-r{
-  position:absolute;
-  z-index:2;
-  transform-origin: calc(1315px + 255px * var(--pf-progress)) 500px;
-  transform:
-    translate(calc(-1030px - 255px * var(--pf-progress)), -500px)
-    rotate(calc(-32deg + 32deg * var(--pf-progress)));
+	position:absolute;
+	z-index:2;
+	transform-origin: calc(1315px + 255px * var(--pf-progress)) 500px;
+	transform:
+		translate(calc(-1030px - 255px * var(--pf-progress)), -500px)
+		rotate(calc(-32deg + 32deg * var(--pf-progress)));
 }
 
 .pf-canvas{
-  width:1285px;
-  height:1388px;
-  overflow:hidden;
+	width:1285px;
+	height:1388px;
+	overflow:hidden;
 }
 
 /* p1 > div */
 .pf-canvas-inner--front{
-  position:relative;
-  width:285px;
-  height:388px;
-  background:var(--pf-paper);
-  transform-origin:285px 0;
-  transform:
-    translate(calc(1030px + 255px * var(--pf-progress)), 500px)
-    rotate(calc(32deg - 32deg * var(--pf-progress)));
+	position:relative;
+	width:285px;
+	height:388px;
+	background:var(--pf-paper);
+	transform-origin:285px 0;
+	transform:
+		translate(calc(1030px + 255px * var(--pf-progress)), 500px)
+		rotate(calc(32deg - 32deg * var(--pf-progress)));
 }
 
 /* p3 > div */
 .pf-canvas-inner--back{
-  position:relative;
-  width:285px;
-  height:388px;
-  background:var(--pf-paper);
-  transform-origin:0 0;
-  transform:
-    translate(calc(1255px - 255px * var(--pf-progress)), 500px)
-    rotate(calc(-32deg + 32deg * var(--pf-progress)));
+	position:relative;
+	width:285px;
+	height:388px;
+	background:var(--pf-paper);
+	transform-origin:0 0;
+	transform:
+		translate(calc(1255px - 255px * var(--pf-progress)), 500px)
+		rotate(calc(-32deg + 32deg * var(--pf-progress)));
 }
 
 /* p1 > div > div (fold edge shading) — positioned so it overlays
-   the content instead of pushing it around in normal flow */
+	 the content instead of pushing it around in normal flow */
 .pf-edge-fade{
-  position:absolute;
-  top:0; left:0;
-  width:10px;
-  height:388px;
-  background:linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
-  pointer-events:none;
+	position:absolute;
+	top:0; left:0;
+	width:10px;
+	height:388px;
+	background:linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
+	pointer-events:none;
 }
 /* p3 > div > div */
 .pf-edge-fade--right{
-  left:auto;
-  right:0;
-  width:9px;
-  height:388px;
-  background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.20));
+	left:auto;
+	right:0;
+	width:9px;
+	height:388px;
+	background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.20));
 }
 
 /* p2 > div — the static revealed face underneath */
 .pf-page-face{
-  width:285px;
-  height:388px;
-  position:absolute;
-  z-index:1;
-  box-shadow:0 0 11px rgba(0,0,0,.5);
-  background:var(--pf-paper);
+	width:285px;
+	height:388px;
+	position:absolute;
+	z-index:1;
+	box-shadow:0 0 11px rgba(0,0,0,.5);
+	background:var(--pf-paper);
 }
 
 .pf-shadow{
-  width:285px;
-  height:388px;
-  position:absolute;
-  overflow:hidden;
-  z-index:3;
+	width:285px;
+	height:388px;
+	position:absolute;
+	overflow:hidden;
+	z-index:3;
 }
 
 /* #s3 */
 .pf-shadow--s3{
-  transform-origin: calc(70px + 255px * var(--pf-progress)) 500px;
-  transform:
-    translate(calc(215px - 255px * var(--pf-progress)), -500px)
-    rotate(calc(-32deg + 32deg * var(--pf-progress)))
-    translate(40px, 0);
+	transform-origin: calc(70px + 255px * var(--pf-progress)) 500px;
+	transform:
+		translate(calc(215px - 255px * var(--pf-progress)), -500px)
+		rotate(calc(-32deg + 32deg * var(--pf-progress)))
+		translate(40px, 0);
 }
 /* #sp3 */
 .pf-shadow-gradient--sp3{
-  width:calc(25px - 14px * var(--pf-progress));
-  height:1000px;
-  overflow:hidden;
-  background:linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
+	width:calc(25px - 14px * var(--pf-progress));
+	height:1000px;
+	overflow:hidden;
+	background:linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
 }
 
 /* #s4 wraps #s2, fades out roughly twice as fast as the main flip */
 .pf-shadow--s4{
-  opacity: calc(1 - min(1, var(--pf-progress) * 2));
+	opacity: calc(1 - min(1, var(--pf-progress) * 2));
 }
 /* #s2 */
 .pf-shadow--s2{
-  transform-origin: calc(45px + 255px * var(--pf-progress)) 500px;
-  transform:
-    translate(calc(240px - 255px * var(--pf-progress)), -500px)
-    rotate(calc(-32deg + 32deg * var(--pf-progress)));
+	transform-origin: calc(45px + 255px * var(--pf-progress)) 500px;
+	transform:
+		translate(calc(240px - 255px * var(--pf-progress)), -500px)
+		rotate(calc(-32deg + 32deg * var(--pf-progress)));
 }
 /* #sp2 */
 .pf-shadow-gradient--sp2{
-  width:15px;
-  height:1000px;
-  overflow:hidden;
-  background:linear-gradient(to left, rgba(0,0,0,.18), rgba(0,0,0,0));
+	width:15px;
+	height:1000px;
+	overflow:hidden;
+	background:linear-gradient(to left, rgba(0,0,0,.18), rgba(0,0,0,0));
 }
 
 /* readable content sitting on the revealed (p2) face */
 .pf-page-content{
-  padding:8% 9%;
-  height:100%;
-  position:relative;
+	padding:8% 9%;
+	height:100%;
+	position:relative;
 }
 .pf-kicker{
-  display:block;
-  font-size:.65rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--pf-accent);
-  margin-bottom:.6em;
+	display:block;
+	font-size:.65rem;
+	letter-spacing:.14em;
+	text-transform:uppercase;
+	color:var(--pf-accent);
+	margin-bottom:.6em;
+	padding-top: 60px;
+	text-decoration: underline;
+}
+.pf-kicker:hover {
+	cursor: pointer;
 }
 .pf-heading{
-  margin:0 0 .4em;
-  font-weight:400;
-  font-size:1.2rem;
-  color:var(--pf-ink);
+	padding-top: 100px;
+	margin:0 0 .4em;
+	font-weight:400;
+	font-size:1.2rem;
+	color:var(--pf-ink);
 }
 .pf-text{
-  margin:0;
-  font-size:.78rem;
-  line-height:1.6;
-  color:#4a4032;
+	margin:0;
+	font-size:.78rem;
+	line-height:1.6;
+	color:#4a4032;
+}
+.pf-img {
+	padding-top: 60px;
+	width: 90%;
+	height: auto;
+	z-index: 5;
 }
 
 @media (prefers-reduced-motion: reduce){
-  .scrollflip__pin{ position:relative; height:auto; padding:4rem 0; }
+	.scrollflip__pin{ position:relative; height:auto; padding:4rem 0; }
 }
 
 @media (max-width: 1400px)
@@ -644,6 +669,14 @@ PAGE FLIP
 		padding-block: 10px;
 		background: rgba(0, 0, 0, 0.5);
 	}
+
+	:root {
+		--pf-scale: 1.1;
+	}
+
+	.pf-stage {
+		left: -3%;
+	}
 }
 
 @media (max-width: 767.20px)
@@ -671,6 +704,14 @@ PAGE FLIP
 	.scroll-list li {
 		font-size: 24px;
 		margin-bottom: 10px;
+	}
+
+	:root {
+		--pf-scale: 0.85;
+	}
+
+	.pf-stage {
+		left: -5%;
 	}
 }
 
@@ -734,6 +775,23 @@ PAGE FLIP
 
 	.scroll-list {
 		padding-inline-start: 30px;
+	}
+	:root {
+		--pf-scale: 0.75;
+	}
+
+	.pf-stage {
+		left: -8%;
+	}
+}
+
+@media (max-width: 480.20px) {
+	:root {
+		--pf-scale: 0.5;
+	}
+
+	.pf-stage {
+		left: -6%;
 	}
 }
 

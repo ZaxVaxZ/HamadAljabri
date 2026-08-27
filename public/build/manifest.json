@@ -52,7 +52,7 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BQxxs81b.css",
+    "file": "assets/app-BP4vbUQz.css",
     "name": "app",
     "names": [
       "app.css"
@@ -79,7 +79,7 @@
     "src": "resources/fonts/zt-nature.regular.otf"
   },
   "resources/js/app.js": {
-    "file": "assets/app-T78QWTCN.js",
+    "file": "assets/app-Dj5OOfau.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

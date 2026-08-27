@@ -33,7 +33,7 @@ toggle.addEventListener('click', () => {
 
   function initFlipbook(section) {
     var windows = Array.prototype.slice.call(section.querySelectorAll('.pf-window'));
-    var n = windows.length;
+    var n = windows.length - 1;
     if (!n) return;
 
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -65,6 +65,7 @@ toggle.addEventListener('click', () => {
       var scrolled = -rect.top;
       if (scrolled < 0) scrolled = 0;
       if (scrolled > totalFlipDistance) scrolled = totalFlipDistance;
+	  scrolled += perPage;
 
       var globalProgress = scrolled / perPage; // 0..n across all windows
 

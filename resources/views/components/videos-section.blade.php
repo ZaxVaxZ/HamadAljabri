@@ -1,3 +1,5 @@
+@props(['s1', 's2', 's3'])
+
 <!--
 	============================================================
 	SCROLL-FLIP BOOK — accurate curl port
@@ -12,7 +14,7 @@
 	  z-index / --pf-progress automatically. Give each one a unique
 	  data-pf-window index (0, 1, 2, ...).
 	- Content lives in THREE places per window, all with the same
-	  .pf-page-content markup:
+	  .pf-page-content  dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}"markup:
 		1) .pf-canvas-inner--front  — the flap as it starts turning
 		2) .pf-canvas-inner--back   — the flap's other side, visible
 									   partway through the turn
@@ -29,7 +31,7 @@
   -->
   <section class="scrollflip" style="--scroll-per-page:80vh;" dir="ltr">
 	<div class="scrollflip__pin">
-	  <div class="pf-stage-outer" style="--pf-scale:1;">
+	  <div class="pf-stage-outer">
 		<div class="pf-stage">
   
 		  <!-- Page 1 (flips first) -->
@@ -37,7 +39,7 @@
 			<div class="pf-r pf-r--front">
 			  <div class="pf-canvas">
 				<div class="pf-canvas-inner--front">
-				  <div class="pf-page-content">
+				  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 					<span class="pf-kicker">Page 1</span>
 					<h3 class="pf-heading">Start scrolling</h3>
 					<p class="pf-text">This is the face revealed once the first flip completes.</p>
@@ -47,13 +49,14 @@
 			  </div>
 			</div>
   
-			<div class="pf-r pf-r--back">
+			<div id="travels" class="pf-r pf-r--back">
 			  <div class="pf-canvas">
 				<div class="pf-canvas-inner--back">
-				  <div class="pf-page-content">
-					<span class="pf-kicker">Page 2</span>
-					<h3 class="pf-heading">Start scrolling</h3>
-					<p class="pf-text">This is the face revealed once the first flip completes.</p>
+				  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+					{{--<span class="pf-kicker">Page 2</span>--}}
+					<h3 class="pf-heading">{{ $s1->title }}</h3>
+					<p class="pf-text">{{ $s1->description }}</p>
+					<a href="#" class="pf-kicker">اضغط لتصفح الحلقات</a>
 				  </div>
 				  <div class="pf-edge-fade pf-edge-fade--right"></div>
 				</div>
@@ -61,7 +64,7 @@
 			</div>
   
 			<div class="pf-page-face">
-			  <div class="pf-page-content">
+			  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 				<span class="pf-kicker">Page 3</span>
 				<h3 class="pf-heading">Keep scrolling</h3>
 				<p class="pf-text">Revealed after the first flip.</p>
@@ -83,23 +86,24 @@
 			<div class="pf-r pf-r--front">
 			  <div class="pf-canvas">
 				<div class="pf-canvas-inner--front">
-				  <div class="pf-page-content">
-					<span class="pf-kicker">Page 3</span>
+				  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+					{{--<span class="pf-kicker">Page 3</span>
 					<h3 class="pf-heading">Keep scrolling</h3>
-					<p class="pf-text">Revealed after the first flip.</p>
+					<p class="pf-text">Revealed after the first flip.</p>--}}
+					<img class="pf-img" src="{{ $s1->thumbnail }}" />
 				  </div>
 				  <div class="pf-edge-fade"></div>
 				</div>
 			  </div>
 			</div>
   
-			<div class="pf-r pf-r--back">
+			<div id="tvcourse" class="pf-r pf-r--back">
 			  <div class="pf-canvas">
 				<div class="pf-canvas-inner--back">
-				  <div class="pf-page-content">
-					<span class="pf-kicker">Page 4</span>
-					<h3 class="pf-heading">Keep scrolling</h3>
-					<p class="pf-text">This is the face revealed once the second flip completes.</p>
+				  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+					<h3 class="pf-heading">{{ $s2->title }}</h3>
+					<p class="pf-text">{{ $s2->description }}</p>
+					<a href="#" class="pf-kicker">اضغط لتصفح الحلقات</a>
 				  </div>
 				  <div class="pf-edge-fade pf-edge-fade--right"></div>
 				</div>
@@ -107,10 +111,11 @@
 			</div>
   
 			<div class="pf-page-face">
-			  <div class="pf-page-content">
-				<span class="pf-kicker">Page 5</span>
+			  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+				{{--<span class="pf-kicker">Page 5</span>
 					<h3 class="pf-heading">Last flip</h3>
-					<p class="pf-text">After this, normal page scrolling resumes.</p>
+					<p class="pf-text">After this, normal page scrolling resumes.</p>--}}
+					<img class="pf-img" src="{{ $s2->thumbnail }}" />
 			  </div>
 			</div>
   
@@ -129,23 +134,24 @@
 			<div class="pf-r pf-r--front">
 			  <div class="pf-canvas">
 				<div class="pf-canvas-inner--front">
-				  <div class="pf-page-content">
-					<span class="pf-kicker">Page 5</span>
+				  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+					{{--<span class="pf-kicker">Page 5</span>
 						<h3 class="pf-heading">Last flip</h3>
-						<p class="pf-text">After this, normal page scrolling resumes.</p>
+						<p class="pf-text">After this, normal page scrolling resumes.</p>--}}
+						<img class="pf-img" src="{{ $s2->thumbnail }}" />
 				  </div>
 				  <div class="pf-edge-fade"></div>
 				</div>
 			  </div>
 			</div>
   
-			<div class="pf-r pf-r--back">
+			<div id="toast" class="pf-r pf-r--back">
 			  <div class="pf-canvas">
 				<div class="pf-canvas-inner--back">
-				  <div class="pf-page-content">
-					<span class="pf-kicker">Page 6</span>
-					<h3 class="pf-heading">Last flip</h3>
-					<p class="pf-text">After this, normal page scrolling resumes.</p>
+				  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+					<h3 class="pf-heading">{{ $s3->title }}</h3>
+					<p class="pf-text">{{ $s3->description }}</p>
+					<a href="#" class="pf-kicker">اضغط لتصفح الحلقات</a>
 				  </div>
 				  <div class="pf-edge-fade pf-edge-fade--right"></div>
 				</div>
@@ -153,10 +159,11 @@
 			</div>
   
 			<div class="pf-page-face">
-			  <div class="pf-page-content">
-				<span class="pf-kicker">Page 7</span>
+			  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+				{{--<span class="pf-kicker">Page 7</span>
 				<h3 class="pf-heading">Last flip</h3>
-				<p class="pf-text">After this, normal page scrolling resumes.</p>
+				<p class="pf-text">After this, normal page scrolling resumes.</p>--}}
+				<img class="pf-img" src="{{ $s3->thumbnail }}" />
 			  </div>
 			</div>
   

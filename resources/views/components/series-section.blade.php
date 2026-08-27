@@ -1,6 +1,6 @@
-@props(['side' => 'right', 'dark' => 'false', 'series'])
+@props(['side' => 'right', 'dark' => 'false', 'series', 'sect_id' => ''])
 
-<section class="{{ $dark == 'true' ? 'dark-sect' : '' }}">
+<section id="{{ $sect_id }}" class="{{ $dark == 'true' ? 'dark-sect' : '' }}">
 	<div class="series-section d-flex flex-column flex-md-row">
 		@if($side == 'right')
 			<div class="img-part col-12 col-md-6">

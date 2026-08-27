@@ -8,22 +8,22 @@
 		<span class="nav-item" href="#contentcreation" aria-label="contentcreation">
 			{{ __('messages.contentcreation') }}
 			<div class="menu-dropdown">
-				<a>عالم حمد</a>
-				<a>خرائط i</a>
-				<a>عيال زايد</a>
-				<a>حمد والذكاء الاصطناعي</a>
+				<a href="#imaps">خرائط i</a>
+				<a href="#3yal">عيال زايد</a>
+				<a href="#world">عالم حمد</a>
+				<a href="#hamadai">حمد والذكاء الاصطناعي</a>
 			</div>
 		</span>
 		<span class="nav-item">
 			{{ __('messages.media') }}
 			<div class="menu-dropdown">
-				<a>الأفلام التجريبية</a>
-				<a>المقابلات التلفزيونية</a>
-				<a>التوستماستر</a>
-				<a>الدورة التلفزيونية التدريبية</a>
+				<a href="#movies">الأفلام التجريبية</a>
+				<a href="#interviews">المقابلات التلفزيونية</a>
+				<a href="#tvcourse">الدورة التلفزيونية التدريبية</a>
+				<a href="#toast">التوستماستر</a>
 			</div>
 		</span>
-		<a class="nav-item" href="#travel" aria-label="travel">
+		<a class="nav-item" href="#travels" aria-label="travel">
 			{{ __('messages.travel') }}
 		</a>
 		<a class="nav-item" href="#photos" aria-label="photos">
