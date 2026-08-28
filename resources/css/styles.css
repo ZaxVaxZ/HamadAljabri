@@ -453,6 +453,7 @@ PAGE FLIP
 	 #page-flip). Stack several for a multi-page sequence; JS sets
 	 --pf-progress (0..1) and z-index on each per its scroll segment. */
 .pf-window{
+	pointer-events: none;
 	position:absolute;
 	top:0;
 	left:0;
@@ -465,6 +466,7 @@ PAGE FLIP
 
 /* ---- shared math for the two outer rotators (r1 / r3) ---- */
 .pf-r{
+	pointer-events: none;
 	position:absolute;
 	z-index:2;
 	transform-origin: calc(1315px + 255px * var(--pf-progress)) 500px;
@@ -477,6 +479,7 @@ PAGE FLIP
 	width:1285px;
 	height:1388px;
 	overflow:hidden;
+	pointer-events: none;
 }
 
 /* p1 > div */
@@ -493,11 +496,13 @@ PAGE FLIP
 
 /* p3 > div */
 .pf-canvas-inner--back{
+	pointer-events: none;
 	position:relative;
 	width:285px;
 	height:388px;
 	background:var(--pf-paper);
 	transform-origin:0 0;
+	pointer-events: none;
 	transform:
 		translate(calc(1255px - 255px * var(--pf-progress)), 500px)
 		rotate(calc(-32deg + 32deg * var(--pf-progress)));
@@ -580,6 +585,7 @@ PAGE FLIP
 	padding:8% 9%;
 	height:100%;
 	position:relative;
+	pointer-events: auto;
 }
 .pf-kicker{
 	display:block;
@@ -590,9 +596,10 @@ PAGE FLIP
 	margin-bottom:.6em;
 	padding-top: 60px;
 	text-decoration: underline;
+	cursor: pointer;
 }
 .pf-kicker:hover {
-	cursor: pointer;
+	color: red;
 }
 .pf-heading{
 	padding-top: 100px;
@@ -608,10 +615,15 @@ PAGE FLIP
 	color:#4a4032;
 }
 .pf-img {
-	padding-top: 60px;
-	width: 90%;
-	height: auto;
+	padding-top: 50px;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
 	z-index: 5;
+}
+
+.pf-img.moved {
+	object-position: 36% -30%;
 }
 
 @media (prefers-reduced-motion: reduce){

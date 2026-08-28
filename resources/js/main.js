@@ -52,8 +52,10 @@ toggle.addEventListener('click', () => {
     }
 
     function layout() {
+
+		const scrollEndDelay = 300;
       var perPage = scrollPerPageInPx();
-      var totalScroll = perPage * n + window.innerHeight;
+      var totalScroll = perPage * n + window.innerHeight + scrollEndDelay;
       section.style.height = totalScroll + 'px';
     }
 
@@ -62,8 +64,12 @@ toggle.addEventListener('click', () => {
       var perPage = scrollPerPageInPx();
       var totalFlipDistance = perPage * n;
 
+	  const scrollStartDelay = 200;
+
       var scrolled = -rect.top;
-      if (scrolled < 0) scrolled = 0;
+      if (scrolled <= 0) scrolled = 0;
+	  if (scrolled < scrollStartDelay) scrolled = 0;
+	  if (scrolled >= scrollStartDelay) scrolled -= scrollStartDelay;
       if (scrolled > totalFlipDistance) scrolled = totalFlipDistance;
 	  scrolled += perPage;
 

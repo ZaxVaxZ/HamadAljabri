@@ -163,7 +163,7 @@
 				{{--<span class="pf-kicker">Page 7</span>
 				<h3 class="pf-heading">Last flip</h3>
 				<p class="pf-text">After this, normal page scrolling resumes.</p>--}}
-				<img class="pf-img" src="{{ Storage::url($s3->thumbnail) }}" />
+				<img class="pf-img moved" src="{{ Storage::url($s3->thumbnail) }}" />
 			  </div>
 			</div>
   
