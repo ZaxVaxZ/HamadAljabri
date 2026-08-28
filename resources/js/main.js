@@ -103,9 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (!items.length) return;
 
 	// --- Config, mapped from your original CSS ---
-	const COVER_END   = 0.20;   // "cover 22%" — fully revealed once element reaches 22% from top
+	const COVER_END   = 0.70;   // "cover 22%" — fully revealed once element reaches 22% from top
 	const ENTRY_START = 0.90;   // "entry 90%" — trigger begins when element hits 90% down the viewport
-	const STAGGER_VH  = 0.05;   // per-item delay, expressed as a % of viewport height (tune to taste)
+	const STAGGER_VH  = 0.02;   // per-item delay, expressed as a % of viewport height (tune to taste)
 	const TRAVEL_PX   = 50;     // matches translateX(-50px)
 
 	let ticking = false;
@@ -124,10 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			const staggerPx = vh * STAGGER_VH * i;
 
 			const rect = el.getBoundingClientRect();
-			const top = rect.top;// + staggerPx;
+			const top = rect.top - staggerPx;
+			const bot = entryStartPx - staggerPx;
 
 			// progress: 0 when top is at entryStartPx, 1 when top is at coverEndPx
-			const raw = (entryStartPx - top) / (entryStartPx - coverEndPx);
+			const raw = (bot - top) / (bot - coverEndPx);
 			const progress = clamp(raw, 0, 1);
 
 			// ease similarly to "linear" in your original (keep linear, or swap easing below)
