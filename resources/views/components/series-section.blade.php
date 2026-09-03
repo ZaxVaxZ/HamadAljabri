@@ -8,8 +8,10 @@
 			</div>
 		@endif
 		<div class="text-part col-12 col-md-6">
+			<p class="section-type">{{ __('messages.series') }}</p>
 			<h2>{{ $series->title }}</h2>
-			<p>{{ $series->description }}</p>
+			<p class="section-desc">{{ $series->description }}</p>
+			<a href="/episodes/{{ $series->id }}">{{ __('messages.watchonyoutube') }}</a>
 		</div>
 		@if($side == 'left')
 			<div class="img-part col-12 col-md-6">

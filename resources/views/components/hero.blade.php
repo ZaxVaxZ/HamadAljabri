@@ -2,7 +2,7 @@
 	<video class="herovideo" autoplay loop muted playsinline data-wf-ignore="true" data-object-fit="cover">
 		<source src="{{ Storage::url('videos/HamadComp.mp4') }}" data-wf-ignore="true">
 	</video>
-	<div class="hero-txt">
+	<div id="aboutText" class="hero-txt">
 		<p>{{ __('messages.about') }}</p>
 		<h1>{{ __('messages.name') }}</h1>
 		<br />

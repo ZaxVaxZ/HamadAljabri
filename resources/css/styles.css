@@ -100,9 +100,9 @@ NAVBAR
 .menu-dropdown {
 	z-index: 5;
 	position: absolute;
-	top: 100%;	           /* sits directly below the trigger */
+	top: 100%;
 	left: 50%;
-	margin-top: 8px;       /* small gap between trigger and menu */
+	margin-top: 8px;
 	width: 200px;
 	background: var(--bg-secondary);
 	border: 2px solid var(--bg-primary);
@@ -121,13 +121,19 @@ NAVBAR
 .menu-dropdown::before {
 	content: "";
 	position: absolute;
-	top: -10px;        /* matches margin-top exactly */
+	top: -10px;
 	left: 0;
 	width: 100%;
 	height: 10px;
 }
 
-.menu-dropdown a {
+.menu-dropdown button {
+	background: none;
+	text-align: start;
+	border: none;
+}
+
+.menu-dropdown a,button {
 	color: lightgray;
 	padding-inline-start: 10px;
 	font-size: 14px;
@@ -135,7 +141,7 @@ NAVBAR
 	cursor: pointer;
 }
 
-.menu-dropdown:hover a:hover {
+.menu-dropdown:hover a:hover,button:hover {
 	color: gray;
 }
 
@@ -380,8 +386,149 @@ SERIES-SECTION
 	object-position: 0% 0%;
 }
 
+.text-part .section-type {
+	width: fit-content;
+	background: rgb(60, 60, 60);
+	border-radius: 5%;
+	padding-block: 2px;
+	padding-inline: 5px;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+
 .series-section h2 {
+	margin-bottom: 30px;
+	font-size: 40px;
+}
+
+.series-section .section-desc {
+	font-size: 30px;
+	line-height: 50px;
+	margin-bottom: 30px;
+}
+
+/*---------------------------------------
+EPISODES PAGE
+-----------------------------------------*/
+
+.articles-page {
+	margin-top: 150px;
+}
+
+.apage-header {
+	width: 100%;
+	margin: 50px 0 50px 0;
+}
+
+.apage-header img {
+	width: 400px;
+	height: auto;
+}
+
+.apage-header h2 {
+	font-size: 44px;
+}
+
+.listicle {
+	width: 100%;
+	margin-bottom: 150px;
+}
+
+.listicle-item {
 	margin-bottom: 20px;
+	cursor: pointer;
+	padding-top: 16px;
+	padding-bottom: 10px;
+	border-radius: 4%;
+}
+
+.listicle-item:hover {
+	background-color: black;
+}
+
+.listicle-item .atext p {
+	color: lightgray;
+}
+
+.listicle-item:hover .atext p {
+	color: white;
+}
+
+.atext {
+	width: 100%;
+	height: 30%;
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.athumb {
+	position: relative;
+	width: 100%;
+	height: 235px;
+	background-color: black;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border-radius: 4%;
+}
+
+.athumb .item-img-fg {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	z-index: 2;
+}
+
+.athumb .item-img-fg img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+.athumb .item-img-bg {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.athumb .item-img-bg img {
+    filter: blur(10px);
+    transform: scale(1.1);
+	height: 350px;
+}
+
+@media (max-width: 1400px)
+{
+	.athumb {
+		height: 200px;
+	}
+	.athumb .item-img-bg img {
+		height: 300px;
+	}
+}
+
+@media (max-width: 767.25px)
+{
+	.listicle {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.athumb {
+		height: 250px;
+	}
+
+	.athumb .item-img-bg img {
+		height: 350px;
+	}
+	
+	.magbanner {
+		width: 80%;
+	}
 }
 
 /*---------------------------------------
@@ -390,15 +537,28 @@ FOOTER
 
 .site-footer {
 	padding-block: 60px;
+	padding-inline: 40px;
+}
+
+.site-footer.dark {
+	background-color: var(--bg-secondary);
 }
 
 .site-footer ul {
 	font-size: 18px;
 }
 
+.footer-icon {
+	margin-inline-end: 6px;
+}
+
+.socials {
+	padding-block: 20px;
+}
+
 #footertitle {
 	font-size: 24px;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 	font-weight: 500;
 }
 
@@ -407,13 +567,18 @@ PAGE FLIP
 -----------------------------------------*/
 /* box-sizing kept local to the component, not a global * rule.
    content-box on purpose: the original geometry assumes content-box math. */
+
+.book-section {
+	background: none;
+	background-color: none;
+}
+
 .scrollflip,
 .scrollflip *{
 	box-sizing:content-box;
 }
 
 .scrollflip{
-	background-color: var(--bg-primary);
 	position:relative;
 	--scroll-per-page: 70vh; /* scroll distance consumed by one page flip */
 }
@@ -594,7 +759,7 @@ PAGE FLIP
 	text-transform:uppercase;
 	color:var(--pf-accent);
 	margin-bottom:.6em;
-	padding-top: 60px;
+	padding-top: 50px;
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -603,6 +768,7 @@ PAGE FLIP
 }
 .pf-heading{
 	padding-top: 100px;
+	padding-bottom: 20px;
 	margin:0 0 .4em;
 	font-weight:400;
 	font-size:1.2rem;
@@ -626,6 +792,248 @@ PAGE FLIP
 	object-position: 36% -30%;
 }
 
+/*---------------------------------------
+ROTATING GALLERY
+-----------------------------------------*/
+
+.orbiter {
+	margin-bottom: 60px;
+}
+
+.orbit-stage {
+	position: relative;
+	width: 300px;
+	height: 300px;
+
+	perspective: 1200px;
+	perspective-origin: 50% 20%;
+
+	transform-style: preserve-3d;
+}
+
+.orbit-item {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+	width: 120px;
+	height: 120px;
+
+	margin: -60px 0 0 -60px;
+
+	transform-style: preserve-3d;
+
+	/*
+	 * Each item gets its own starting angle.
+	 * Change --total in the Blade below if needed.
+	 */
+	--angle: 0deg;
+
+	animation: orbit 16s linear infinite;
+}
+
+.orbit-item img {
+	width: 180px;
+	height: 180px;
+
+	object-fit: cover;
+	display: block;
+
+	border-radius: 8px;
+}
+
+.orbit-item:nth-child(1) { animation-delay: 0s; }
+.orbit-item:nth-child(2) { animation-delay: -2s; }
+.orbit-item:nth-child(3) { animation-delay: -4s; }
+.orbit-item:nth-child(4) { animation-delay: -6s; }
+.orbit-item:nth-child(5) { animation-delay: -8s; }
+.orbit-item:nth-child(6) { animation-delay: -10s; }
+.orbit-item:nth-child(7) { animation-delay: -12s; }
+.orbit-item:nth-child(8) { animation-delay: -14s; }
+
+/*
+ * Smooth circular orbit.
+ *
+ * Instead of manually specifying 8 positions,
+ * we calculate the position mathematically.
+ */
+@keyframes orbit {
+	from {
+		transform:
+			rotateY(var(--angle))
+			translateZ(280px)
+			scale(1);
+	}
+
+	to {
+		transform:
+			rotateY(calc(var(--angle) + 360deg))
+			translateZ(280px)
+			scale(1);
+	}
+}
+
+/*---------------------------------------
+ARTICLES SECTION
+-----------------------------------------*/
+
+.articles {
+	background-color: var(--bg-secondary);
+	padding-inline: 160px;
+}
+
+.article {
+	align-items: start;
+	margin-bottom: 30px;
+	padding-inline-end: 20px;
+}
+
+.article:hover {
+	cursor: pointer;
+}
+
+.article:hover p {
+	color: rgb(250, 250, 50);
+}
+
+.sect-header {
+	margin-bottom: 60px;
+}
+
+.sect-header h2 {
+	font-size: 50px;
+}
+
+.apic {
+	width: 160px;
+	height: 94.7px;
+	margin-inline-end: 15px;
+	border-radius: 5px;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.truncate-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+.atitle {
+	margin: auto 0 auto 0;
+}
+
+.morearticles {
+	color: yellow;
+	font-size: 18px;
+}
+
+.morearticles:hover {
+	color: goldenrod;
+}
+
+.atitle p {
+	color: white;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+.magbanner {
+	flex-shrink: 0;
+	height: 100px;
+	width: auto;
+	margin-bottom: 60px;
+}
+
+.magazine {
+	margin-bottom: 70px;
+}
+
+.alink {
+	margin-top: 30px;
+}
+
+.alink p {
+	font-size: 26px;
+	color: blue;
+}
+
+.alink:hover p {
+	font-size: 27px;
+	color: var(--primary-color);
+}
+
+/*---------------------------------------
+PAGE NAVIGATION
+-----------------------------------------*/
+
+.pager {
+	transition: opacity 0.2s ease;
+}
+
+.pager.is-loading {
+	opacity: 0.6;
+    pointer-events: none;
+}
+
+.pagination-sect {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.listicle-pagination {
+	width: fit-content;
+    margin-top: 40px;
+}
+
+.listicle-pagination button {
+	all: unset;
+	color: white;
+	font-size: 24px;
+	height: 36px;
+	width: 36px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+	font-weight: 500;
+	margin-inline: 2px;
+	border: 2px solid transparent;
+}
+
+.listicle-pagination button:hover {
+	border: 2px solid gray;
+	border-radius: 20%;
+}
+
+.listicle-pagination button.active {
+    font-weight: bold;
+	color: gold;
+	border: 2px solid goldenrod;
+	border-radius: 20%;
+}
+
+.listicle-pagination button:disabled {
+    cursor: default;
+}
+
+.listicle-pagination button:disabled i {
+    color: rgb(75, 75, 75);
+}
+
+.listicle-pagination button:disabled:hover {
+	border: 2px solid transparent;
+}
+
+/*---------------------------------------
+SCREEN SIZE ACCOMIDATION
+-----------------------------------------*/
+
 @media (prefers-reduced-motion: reduce){
 	.scrollflip__pin{ position:relative; height:auto; padding:4rem 0; }
 }
@@ -647,6 +1055,14 @@ PAGE FLIP
 	.scroll-list li {
 		font-size: 22px;
 		margin-bottom: 10px;
+	}
+
+	.site-footer {
+		padding-inline: 10px;
+	}
+
+	.socials {
+		padding-inline-start: 40px;
 	}
 }
 
@@ -688,6 +1104,10 @@ PAGE FLIP
 
 	.pf-stage {
 		left: -3%;
+	}
+
+	.socials {
+		padding-inline-start: 10px;
 	}
 }
 
@@ -788,12 +1208,31 @@ PAGE FLIP
 	.scroll-list {
 		padding-inline-start: 30px;
 	}
+	
 	:root {
 		--pf-scale: 0.75;
 	}
 
 	.pf-stage {
 		left: -8%;
+	}
+
+	.socials {
+		padding-inline-start: 20px;
+	}
+
+	.article {
+		align-items: center;
+		margin-bottom: 5px;
+		padding-inline-end: 0;
+	}
+
+	.apic {
+		width: 90%;
+		height: 215px;
+		object-fit: cover;
+		margin-bottom: 16px;
+		margin-inline-end: 0;
 	}
 }
 
@@ -804,6 +1243,14 @@ PAGE FLIP
 
 	.pf-stage {
 		left: -6%;
+	}
+
+	.listicle-pagination button {
+		font-size: 16px;
+		height: 26px;
+		width: 26px;
+		margin-inline: 2px;
+		border: 2px solid transparent;
 	}
 }
 

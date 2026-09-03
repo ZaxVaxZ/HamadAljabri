@@ -1,4 +1,4 @@
-@props(['langret' => 'false'])
+@props(['langret' => 'false', 'darkfoot' => 'false'])
 
 <!doctype html>
 <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
@@ -46,7 +46,7 @@
 			{{ $slot }}
         </main>
 
-		<x-footer />
+		<x-footer dark="{{ $darkfoot }}" />
 
 		@livewireScripts
     </body>

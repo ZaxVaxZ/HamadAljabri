@@ -29,7 +29,7 @@
 	- Requires scroll-flipbook.css and scroll-flipbook.js.
 	============================================================
   -->
-  <section class="scrollflip" style="--scroll-per-page:80vh;" dir="ltr">
+  <section class="book-section scrollflip" style="--scroll-per-page:80vh;" dir="ltr">
 	<div class="scrollflip__pin">
 	  <div class="pf-stage-outer">
 		<div class="pf-stage">
@@ -56,7 +56,7 @@
 					{{--<span class="pf-kicker">Page 2</span>--}}
 					<h3 class="pf-heading">{{ $s1->title }}</h3>
 					<p class="pf-text">{{ $s1->description }}</p>
-					<a href="#" class="pf-kicker">اضغط لتصفح الحلقات</a>
+					<a href="/episodes/{{ $s1->content }}" class="pf-kicker">{{ __('messages.watchonyoutube') }}</a>
 				  </div>
 				  <div class="pf-edge-fade pf-edge-fade--right"></div>
 				</div>
@@ -103,7 +103,7 @@
 				  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 					<h3 class="pf-heading">{{ $s2->title }}</h3>
 					<p class="pf-text">{{ $s2->description }}</p>
-					<a href="#" class="pf-kicker">اضغط لتصفح الحلقات</a>
+					<a href="/episodes/{{ $s2->content }}" class="pf-kicker">{{ __('messages.watchonyoutube') }}</a>
 				  </div>
 				  <div class="pf-edge-fade pf-edge-fade--right"></div>
 				</div>
@@ -151,7 +151,7 @@
 				  <div class="pf-page-content" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 					<h3 class="pf-heading">{{ $s3->title }}</h3>
 					<p class="pf-text">{{ $s3->description }}</p>
-					<a href="#" class="pf-kicker">اضغط لتصفح الحلقات</a>
+					<a href="/episodes/{{ $s3->content }}" class="pf-kicker">{{ __('messages.watchonyoutube') }}</a>
 				  </div>
 				  <div class="pf-edge-fade pf-edge-fade--right"></div>
 				</div>
