@@ -2,7 +2,7 @@
 
 return [
 	'lang' => 'العربية',
-	'name' => 'Hamad Aljabri',
+	'name' => 'Dr. Hamad Aljabri',
     'aboutsection' => 'About',
     'about' => 'About',
     'books' => 'Books',

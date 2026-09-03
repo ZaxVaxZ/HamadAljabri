@@ -2,7 +2,7 @@
 
 return [
 	'lang' => 'English',
-	'name' => 'حمد الجابري',
+	'name' => 'د. حمد الجابري',
     'aboutsection' => 'السيرة الذاتية',
     'about' => 'تعرف على',
     'books' => 'المؤلفات',

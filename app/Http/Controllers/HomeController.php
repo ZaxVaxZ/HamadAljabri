@@ -11,8 +11,8 @@ class HomeController
 	{
 		$locale = app()->getLocale();
 		$series = ContentBlock::forLocale($locale)->ofType('series')->active()->oldest()->orderByDesc('id')->get();
-		$photos = ContentBlock::ofType('photo')->active()->oldest()->orderByDesc('id')->limit(12)->get();
-		$articles = ContentBlock::ofType('article')->active()->oldest()->orderByDesc('id')->limit(4)->get();
+		$photos = ContentBlock::ofType('photo')->active()->latest()->orderByDesc('id')->limit(12)->get();
+		$articles = ContentBlock::ofType('article')->active()->latest()->orderByDesc('id')->limit(4)->get();
 
 		$pointersAR = [
 			'صانع محتوى',
@@ -60,9 +60,9 @@ class HomeController
 
 		$ordered = ['عالم حمد'];
 
-		$oldest = in_array($serie, $ordered);
+		$latest = !in_array($serie['title'], $ordered);
 
-		return view('episodes', ['series' => $serie['title'], 'oldest' => $oldest]);
+		return view('episodes', ['series' => $serie['title'], 'latest' => $latest]);
 	}
 
 	function episodesEN(Request $request) {
