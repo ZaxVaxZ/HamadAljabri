@@ -80,14 +80,6 @@ NAVBAR
 	width: fit-content;
 }
 
-.mobile-navlinks {
-	padding-block: 20px;
-}
-
-.mobile-navlinks .nav-item {
-	font-size: 18px;
-}
-
 .nav-item {
 	position: relative;
 	color: white;
@@ -197,6 +189,25 @@ NAVBAR
 MOBILE DROPDOWN NAV
 -----------------------------------------*/
 
+.mobile-menu {
+	display: none;
+	width: 100%;
+	justify-items: start;
+}
+
+.mobile-menu.active {
+	display: block;
+}
+
+.mobile-navlinks {
+	padding-block: 20px;
+	width: fit-content;
+}
+
+.mobile-navlinks .nav-item {
+	font-size: 18px;
+}
+
 .navmenu-bars {
 	padding: 0;
 	margin: 0;
@@ -240,14 +251,6 @@ MOBILE DROPDOWN NAV
 
 .menu-toggle.active span:nth-child(2) {
 	opacity: 0;
-}
-
-.mobile-menu {
-	display: none;
-}
-
-.mobile-menu.active {
-	display: block;
 }
 
 /*---------------------------------------

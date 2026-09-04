@@ -37,7 +37,7 @@
 		</a>
 	</div>
 @else
-	<div class="mobile-navlinks d-flex d-lg-none flex-column justify-content-between gap-1 align-items-start" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+	<div class="mobile-navlinks d-flex d-lg-none flex-column justify-content-between gap-1" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 		<a class="nav-item {{ $highlight == 'about' ? 'active' : '' }}" href="{{ request()->path() == '/' ? '#about' : '/#about' }}" aria-label="about">
 			{{ __('messages.aboutsection') }}
 		</a>

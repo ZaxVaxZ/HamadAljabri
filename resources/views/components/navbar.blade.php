@@ -21,7 +21,7 @@
 			<span></span>
 		</button>
 	</div>
-	<div id="mobile-menu" class="mobile-menu">
+	<div id="mobile-menu" class="mobile-menu" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 		<x-navlinks :highlight="$highlight" type="mobile" />
 	</div>
 </div>
