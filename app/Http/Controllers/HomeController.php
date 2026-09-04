@@ -11,7 +11,6 @@ class HomeController
 	{
 		$locale = app()->getLocale();
 		$series = ContentBlock::forLocale($locale)->ofType('series')->active()->oldest()->orderByDesc('id')->get();
-		$photos = ContentBlock::ofType('photo')->active()->latest()->orderByDesc('id')->limit(12)->get();
 		$articles = ContentBlock::ofType('article')->active()->latest()->orderByDesc('id')->limit(4)->get();
 
 		$pointersAR = [
@@ -31,6 +30,25 @@ class HomeController
 			'Motivational Speaker',
 			'PhD in A.I',
 			'My Message: Peaceful Coexistence'
+		];
+
+		$photos = [
+			'/images/Rot1.jpeg',
+			'/images/Rot2.jpeg',
+			'/images/Rot3.jpeg',
+			'/images/Rot4.jpeg',
+			'/images/Rot5.jpeg',
+			'/images/Rot6.jpeg',
+			'/images/Rot7.jpeg',
+			'/images/Rot8.jpeg',
+			'/images/Rot9.jpeg',
+			'/images/Rot10.jpeg',
+			'/images/Rot11.jpeg',
+			'/images/Rot12.jpeg',
+			'/images/Rot13.jpeg',
+			'/images/Rot14.jpeg',
+			'/images/Rot15.jpeg',
+			'/images/Rot16.jpeg',
 		];
 
 		$records = [
@@ -85,16 +103,13 @@ class HomeController
 	}
 
 	function episodePage(Request $request) {
-		$exception = 'syrianmemory';
-
 		$recordId = (int) $request->route('id');
 
-		$episode = ContentBlock::forLocale(app()->getLocale())->ofType('interview')->active()->where('id', $recordId)->firstOrFail();
+		$episode = ContentBlock::forLocale('ar')->ofType('interview')->active()->where('id', $recordId)->firstOrFail();
 
-		$previous = ContentBlock::forLocale(app()->getLocale())
+		$previous = ContentBlock::forLocale('ar')
 			->ofType('interview')
 			->where('origin', $episode->origin)
-			->where('link', 'not like', '%' . $exception . '%')
 			->where(function ($query) use ($episode) {
 				$query->where('created_at', '<', $episode->created_at)
 					->orWhere(function ($query) use ($episode) {
@@ -108,11 +123,10 @@ class HomeController
 
 		$prevID = $previous?->id ?? -1;
 
-		$next = ContentBlock::forLocale(app()->getLocale())
+		$next = ContentBlock::forLocale('ar')
 			->ofType('interview')
 			->active()
 			->where('origin', $episode->origin)
-			->where('link', 'not like', '%' . $exception . '%')
 			->where(function ($query) use ($episode) {
 				$query->where('created_at', '>', $episode->created_at)
 					->orWhere(function ($query) use ($episode) {

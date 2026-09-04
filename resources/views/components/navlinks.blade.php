@@ -26,7 +26,7 @@
 		<a class="nav-item" href="/episodes/5" aria-label="travel">
 			{{ __('messages.travel') }}
 		</a>
-		<a class="nav-item" href="{{ request()->path() == '/' ? '#photos' : '/#photos' }}" aria-label="photos">
+		<a class="nav-item" href="/gallery" aria-label="photos">
 			{{ __('messages.photos') }}
 		</a>
 		<a class="nav-item" href="/articles" aria-label="articles">
@@ -62,7 +62,7 @@
 		<a class="nav-item" href="/episodes/5" aria-label="travel">
 			{{ __('messages.travel') }}
 		</a>
-		<a class="nav-item" href="{{ request()->path() == '/' ? '#photos' : '/#photos' }}" aria-label="photos">
+		<a class="nav-item" href="/gallery" aria-label="photos">
 			{{ __('messages.photos') }}
 		</a>
 		<a class="nav-item" href="/articles" aria-label="articles">

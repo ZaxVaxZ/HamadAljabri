@@ -376,7 +376,8 @@ SERIES-SECTION
 -----------------------------------------*/
 
 .series-section .text-part {
-	padding: 50px;
+	padding-inline-start: 60px;
+	padding-inline-end: 30px;
 }
 
 .series-section img {
@@ -398,12 +399,12 @@ SERIES-SECTION
 
 .series-section h2 {
 	margin-bottom: 30px;
-	font-size: 40px;
+	font-size: 36px;
 }
 
 .series-section .section-desc {
-	font-size: 30px;
-	line-height: 50px;
+	font-size: 22px;
+	line-height: 40px;
 	margin-bottom: 30px;
 }
 
@@ -796,17 +797,36 @@ PAGE FLIP
 ROTATING GALLERY
 -----------------------------------------*/
 
+.gallery-section {
+	padding-bottom: 120px;
+}
+
+.gallery-section .morelink {
+	margin-top: 30px;
+}
+
+.gallery-section .morelink a {
+	color: cyan;
+	font-size: 20px;
+}
+
+.gallery-section .morelink a:hover {
+	color: rgb(0, 140, 140);
+}
+
 .orbiter {
-	margin-bottom: 60px;
+	overflow: hidden;
 }
 
 .orbit-stage {
+	height: 500px;
+	padding: 0;
+	margin-top: -140px;
+
 	position: relative;
-	width: 300px;
-	height: 300px;
 
 	perspective: 1200px;
-	perspective-origin: 50% 20%;
+	perspective-origin: 50% 50%;
 
 	transform-style: preserve-3d;
 }
@@ -830,7 +850,7 @@ ROTATING GALLERY
 	 */
 	--angle: 0deg;
 
-	animation: orbit 16s linear infinite;
+	animation: orbit 48s linear infinite;
 }
 
 .orbit-item img {
@@ -844,13 +864,21 @@ ROTATING GALLERY
 }
 
 .orbit-item:nth-child(1) { animation-delay: 0s; }
-.orbit-item:nth-child(2) { animation-delay: -2s; }
-.orbit-item:nth-child(3) { animation-delay: -4s; }
-.orbit-item:nth-child(4) { animation-delay: -6s; }
-.orbit-item:nth-child(5) { animation-delay: -8s; }
-.orbit-item:nth-child(6) { animation-delay: -10s; }
-.orbit-item:nth-child(7) { animation-delay: -12s; }
-.orbit-item:nth-child(8) { animation-delay: -14s; }
+.orbit-item:nth-child(2) { animation-delay: -3s; }
+.orbit-item:nth-child(3) { animation-delay: -6s; }
+.orbit-item:nth-child(4) { animation-delay: -9s; }
+.orbit-item:nth-child(5) { animation-delay: -12s; }
+.orbit-item:nth-child(6) { animation-delay: -15s; }
+.orbit-item:nth-child(7) { animation-delay: -18s; }
+.orbit-item:nth-child(8) { animation-delay: -21s; }
+.orbit-item:nth-child(9) { animation-delay: -24s; }
+.orbit-item:nth-child(10) { animation-delay: -27s; }
+.orbit-item:nth-child(11) { animation-delay: -30s; }
+.orbit-item:nth-child(12) { animation-delay: -33s; }
+.orbit-item:nth-child(13) { animation-delay: -36s; }
+.orbit-item:nth-child(14) { animation-delay: -39s; }
+.orbit-item:nth-child(15) { animation-delay: -42s; }
+.orbit-item:nth-child(16) { animation-delay: -45s; }
 
 /*
  * Smooth circular orbit.
@@ -862,16 +890,143 @@ ROTATING GALLERY
 	from {
 		transform:
 			rotateY(var(--angle))
-			translateZ(280px)
+			translateZ(500px)
 			scale(1);
 	}
 
 	to {
 		transform:
 			rotateY(calc(var(--angle) + 360deg))
-			translateZ(280px)
+			translateZ(500px)
 			scale(1);
 	}
+}
+
+/*---------------------------------------
+GALLERY
+-----------------------------------------*/
+
+.gallery-view {
+	padding: 100px 80px 80px 80px;
+}
+
+.gallery-view h2 {
+	font-size: 44px;
+}
+
+.albums {
+	margin: 30px 0 150px 0;
+}
+
+.gallery {
+	margin: 30px 0 150px 0;
+}
+
+.year-album {
+	margin-bottom: 10px;
+	padding-block: 10px;
+	border-radius: 10%;
+}
+
+.year-album:hover {
+	cursor: pointer;
+	background: black;
+}
+
+.year-album:hover .album-title {
+	color: white;
+}
+
+.year-album img {
+	width: 98%;
+	height: auto;
+}
+
+.album-title {
+	color: cyan;
+	text-align: center;
+}
+
+.gallery-photo {
+	width: 100%;
+	height: auto;
+	padding-bottom: 6px;
+	flex-shrink: 0;
+}
+
+.flip-card {
+    width: 100%;
+    perspective: 1000px;
+}
+
+.flip-card:hover {
+	cursor: pointer;
+}
+
+.flip-card-inner {
+    display: grid;
+    width: 100%;
+
+    transform-style: preserve-3d;
+    transition: transform .6s ease;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-inner > * {
+    grid-area: 1 / 1;
+}
+
+/* Front */
+.flip-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Back */
+.flip-card-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    background-image: linear-gradient(to top, rgb(60, 60, 60), gray, rgb(60, 60, 60));
+
+    transform: rotateY(180deg);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back p {
+	color: white;
+}
+
+.flip-card-back a {
+	position: absolute;
+	bottom: 10%;
+	color: cyan !important;
+}
+
+.flip-card-back i {
+	color: cyan !important;
+}
+
+#photoModal .modal-content {
+	background: black;
+}
+
+.btn-close {
+    /*position:absolute;*/
+	padding: 25px 25px 0 0;
+    z-index:100;
+    /*filter:invert(1);*/
 }
 
 /*---------------------------------------
@@ -894,10 +1049,11 @@ ARTICLES SECTION
 }
 
 .article:hover p {
-	color: rgb(250, 250, 50);
+	color: cyan;
 }
 
 .sect-header {
+	margin-top: 50px;
 	margin-bottom: 60px;
 }
 
@@ -927,12 +1083,12 @@ ARTICLES SECTION
 }
 
 .morearticles {
-	color: yellow;
+	color: cyan;
 	font-size: 18px;
 }
 
 .morearticles:hover {
-	color: goldenrod;
+	color: rgb(0, 140, 140);
 }
 
 .atitle p {
@@ -1031,6 +1187,53 @@ PAGE NAVIGATION
 }
 
 /*---------------------------------------
+EMBEDDING PAGE
+-----------------------------------------*/
+
+.player-page {
+	margin-block: 100px;
+	height: 600px;
+}
+
+.player-arrow {
+	position: absolute;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border-radius: 50%;
+	margin-bottom: 35px;
+}
+
+.player-left {
+	text-align: center;
+	height: 100%;
+	width: 9%;
+}
+
+.player-right {
+	text-align: center;
+	height: 100%;
+	width: 7%;
+}
+
+.player {
+	width: 84%;
+	padding: 30px;
+    box-sizing: border-box;
+}
+
+.videoplayer {
+	width: 100%;
+	max-width: 900px;
+	aspect-ratio: 16 / 9;
+}
+
+/*---------------------------------------
 SCREEN SIZE ACCOMIDATION
 -----------------------------------------*/
 
@@ -1109,6 +1312,14 @@ SCREEN SIZE ACCOMIDATION
 	.socials {
 		padding-inline-start: 10px;
 	}
+	
+	.player-page {
+		height: 400px;
+	}
+
+	.player {
+		padding: 40px;
+	}
 }
 
 @media (max-width: 767.20px)
@@ -1144,6 +1355,19 @@ SCREEN SIZE ACCOMIDATION
 
 	.pf-stage {
 		left: -5%;
+	}
+	
+	.player {
+		padding: 10px;
+		width: 80%;
+	}
+
+	.player-left {
+		font-size: 13px;
+	}
+
+	.player-right {
+		font-size: 13px;
 	}
 }
 

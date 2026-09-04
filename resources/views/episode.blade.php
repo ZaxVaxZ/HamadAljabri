@@ -1,5 +1,5 @@
-<x-layouts::mainpage langret="true">
-	<div class="player-page d-flex flex-row justify-content-evenly align-items-center">
+<x-layouts::mainpage langret="true" darkfoot="true">
+	<div class="player-page d-flex flex-row justify-content-evenly align-items-center" dir="rtl">
 		<div class="player-right d-flex flex-row justify-content-center align-items-center center">
 			@if ($nextID != -1)
 				<a href="/watch/{{ $nextID }}" class="player-arrow" aria-label="__('messages.nextVid')">❮</a>

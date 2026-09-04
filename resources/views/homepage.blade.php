@@ -12,6 +12,6 @@
 	<x-series-section dark="true" :series="$recs['series'][8]" sect_id="hamadai" />
 	<x-series-section side="left" :series="$recs['series'][4]" sect_id="movies" />
 	<x-series-section dark="true" :series="$recs['series'][5]" sect_id="interviews" />
-	<x-gallery-section :serieses="$recs['photos']" />
+	<x-gallery-section :photos="$recs['photos']" />
 	<x-articles :recs="$recs" />
 </x-layouts::mainpage>
