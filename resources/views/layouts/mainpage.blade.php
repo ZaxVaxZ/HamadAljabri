@@ -1,4 +1,4 @@
-@props(['langret' => 'false', 'darkfoot' => 'false'])
+@props(['langret' => 'false', 'darkfoot' => 'false', 'highlight' => 'about'])
 
 <!doctype html>
 <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
@@ -40,7 +40,7 @@
     
     <body>
 
-        <x-navbar />
+        <x-navbar :highlight="$highlight" />
 
         <main>
 			{{ $slot }}

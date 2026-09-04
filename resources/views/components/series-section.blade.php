@@ -3,7 +3,7 @@
 <section id="{{ $sect_id }}" class="{{ $dark == 'true' ? 'dark-sect' : '' }}">
 	<div class="series-section d-flex flex-column flex-md-row">
 		@if($side == 'right')
-			<div class="img-part col-12 col-md-6">
+			<div class="img-part col-12 col-md-6 d-flex flex-row justify-content-center align-items-center">
 				<img src="{{ Storage::url($series->thumbnail) }}" />
 			</div>
 		@endif
@@ -14,7 +14,7 @@
 			<a href="/episodes/{{ $series->id }}">{{ __('messages.watchonyoutube') }}</a>
 		</div>
 		@if($side == 'left')
-			<div class="img-part col-12 col-md-6">
+			<div class="img-part col-12 col-md-6 d-flex flex-row justify-content-center align-items-center">
 				<img src="{{ Storage::url($series->thumbnail) }}" />
 			</div>
 		@endif

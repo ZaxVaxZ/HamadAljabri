@@ -1,9 +1,11 @@
+@props(['highlight' => 'about'])
+
 <div class="navbar align-items-start" dir="ltr">
 	<div class="col-11 col-lg-2" style="padding: 0;">
 		<a class="logo-text" href="/">HAMAD</a>
 	</div>
 	<div class="col-8 d-none d-lg-flex flex-row justify-content-center" style="padding: 0;">
-		<x-navlinks />
+		<x-navlinks :highlight="$highlight" />
 	</div>
 	<div class="col-2 d-none d-lg-flex flex-row justify-content-end" style="padding: 0;">
 		<x-lang-btn />
@@ -20,6 +22,6 @@
 		</button>
 	</div>
 	<div id="mobile-menu" class="mobile-menu">
-		<x-navlinks type="mobile" />
+		<x-navlinks :highlight="$highlight" type="mobile" />
 	</div>
 </div>

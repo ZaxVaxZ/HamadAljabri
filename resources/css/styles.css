@@ -161,6 +161,11 @@ NAVBAR
 	background-color: white;
 }
 
+.subnav.active {
+	background: rgb(60, 60, 60);
+	color: white;
+}
+
 .logo-text {
 	font-family: 'BoldLettering', sans-serif;
 	font-size: 30px;
@@ -528,6 +533,14 @@ EPISODES PAGE
 	}
 	
 	.magbanner {
+		width: 80%;
+	}
+
+	.series-section .text-part {
+		padding-block: 60px;
+	}
+
+	.series-section img {
 		width: 80%;
 	}
 }
@@ -1035,13 +1048,13 @@ ARTICLES SECTION
 
 .articles {
 	background-color: var(--bg-secondary);
-	padding-inline: 160px;
+	padding-inline: 100px;
 }
 
 .article {
 	align-items: start;
 	margin-bottom: 30px;
-	padding-inline-end: 20px;
+	padding-inline-end: 40px;
 }
 
 .article:hover {
@@ -1267,6 +1280,10 @@ SCREEN SIZE ACCOMIDATION
 	.socials {
 		padding-inline-start: 40px;
 	}
+
+	.articles {
+		padding-inline: 60px;
+	}
 }
 
 @media (max-width: 991.20px)
@@ -1368,6 +1385,10 @@ SCREEN SIZE ACCOMIDATION
 
 	.player-right {
 		font-size: 13px;
+	}
+
+	.articles {
+		padding-inline: 20px;
 	}
 }
 
