@@ -1,6 +1,6 @@
 @props(['pointers'])
 
-<section class="about-section">
+<section id="about" class="about-section">
 	<div class="d-block d-lg-flex">
 		<div class="about-right col-12 col-lg-5">
 			<ul class="scroll-list">

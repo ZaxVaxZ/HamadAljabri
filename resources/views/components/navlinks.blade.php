@@ -32,7 +32,7 @@
 		<a class="nav-item {{ $highlight == 'articles' ? 'active' : '' }}" href="/articles" aria-label="articles">
 			{{ __('messages.articles') }}
 		</a>
-		<a class="nav-item {{ $highlight == 'contact' ? 'active' : '' }}" href="{{ request()->path() == '/' ? '#contact' : '/#contact' }}" aria-label="contact">
+		<a class="nav-item {{ $highlight == 'contact' ? 'active' : '' }}" href="#contact" aria-label="contact">
 			{{ __('messages.contact') }}
 		</a>
 	</div>

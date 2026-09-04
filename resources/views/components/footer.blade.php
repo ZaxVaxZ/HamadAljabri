@@ -40,7 +40,7 @@
 				</div>
 			</div>
 
-			<div class="socials col-lg-4 col-md-5 col-12" dir="ltr" style="{{ app()->getLocale() == 'ar' ? 'padding-left: 150px;' : '' }}">
+			<div id="contact" class="socials col-lg-4 col-md-5 col-12" dir="ltr" style="{{ app()->getLocale() == 'ar' ? 'padding-left: 150px;' : '' }}">
 				<div class="d-flex flex-column">
 					<a href="mailto:hamad.aljabri.uae@gmail.com" class="d-flex flex-row align-items-center mb-3 text-white" aria-label="{{ __('messages.contactwith') }} {{ __('messages.name')  }} Email">
 						<i class="footer-icon fa-solid fa-envelope"></i>
