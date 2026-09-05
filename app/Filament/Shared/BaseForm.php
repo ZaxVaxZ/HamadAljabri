@@ -66,7 +66,7 @@ abstract class BaseForm
 					FileUpload::make('content')
 						->label('Article PDF')
 						->disk('public')
-						->directory('images')
+						->directory('files')
 						->visibility('public')
 						->maxSize(20480)
 						->validationMessages([

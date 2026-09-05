@@ -65,11 +65,11 @@ new class extends Component
 	<div class="listicle row">
 		@foreach($items as $item)
 			@php
-				$exception = $item->type === 'article' || str_contains($item->link, 'syrianmemory');
+				$exception = $item->type === 'article';
 			@endphp
 
-			<a href="{{ $exception ? $item->link : '/watch/' . $item->id }}"
-				target="{{ $exception ? '_blank' : '_self' }}"
+			<a href="{{ $exception ? (str_contains($item->content, '.pdf') ? Storage::url($item->content) : $item->link) : '/watch/' . $item->id }}"
+				target="{{ $exception && !str_contains($item->content, '.pdf') ? '_blank' : '_self' }}"
 				class="listicle-item col-12 col-md-6 col-lg-4"
 				aria-label="{{ $item->title }}">
 
