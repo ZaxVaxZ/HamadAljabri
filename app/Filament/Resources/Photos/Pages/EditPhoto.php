@@ -11,6 +11,13 @@ class EditPhoto extends EditRecord
 {
     protected static string $resource = PhotoResource::class;
 
+	protected function mutateFormDataBeforeCreate(array $data): array
+	{
+		$data['origin'] = \Carbon\Carbon::parse($data['created_at'])->year;
+
+		return $data;
+	}
+
     protected function getHeaderActions(): array
     {
         return [
