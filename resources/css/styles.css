@@ -1,6 +1,15 @@
+/*
+576px: Small screens (landscape phones).
+768px: Medium screens (tablets).
+992px: Large screens (desktops).
+1200px: Extra large screens (large desktops).
+1400px: Extra extra large screens (enormous monitors).
+*/
+
 /*---------------------------------------
 CUSTOM PROPERTIES ( VARIABLES )
 -----------------------------------------*/
+
 :root {
 	--fg-primary: white;
 	--bg-primary: #202020;
@@ -372,13 +381,6 @@ ABOUT
 	will-change: opacity, transform;
 }
 
-@media (prefers-reduced-motion: reduce) {
-	.scroll-list li {
-		opacity: 1;
-		transform: none;
-	}
-}
-
 /*---------------------------------------
 SERIES-SECTION
 -----------------------------------------*/
@@ -510,44 +512,6 @@ EPISODES PAGE
 	height: 350px;
 }
 
-@media (max-width: 1400px)
-{
-	.athumb {
-		height: 200px;
-	}
-	.athumb .item-img-bg img {
-		height: 300px;
-	}
-}
-
-@media (max-width: 767.25px)
-{
-	.listicle {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-
-	.athumb {
-		height: 250px;
-	}
-
-	.athumb .item-img-bg img {
-		height: 350px;
-	}
-	
-	.magbanner {
-		width: 80%;
-	}
-
-	.series-section .text-part {
-		padding-block: 60px;
-	}
-
-	.series-section img {
-		width: 80%;
-	}
-}
-
 /*---------------------------------------
 FOOTER
 -----------------------------------------*/
@@ -582,8 +546,6 @@ FOOTER
 /*---------------------------------------
 PAGE FLIP
 -----------------------------------------*/
-/* box-sizing kept local to the component, not a global * rule.
-   content-box on purpose: the original geometry assumes content-box math. */
 
 .book-section {
 	background: none;
@@ -591,222 +553,212 @@ PAGE FLIP
 }
 
 .scrollflip,
-.scrollflip *{
-	box-sizing:content-box;
+.scrollflip * {
+	box-sizing: content-box;
 }
 
-.scrollflip{
-	position:relative;
-	--scroll-per-page: 70vh; /* scroll distance consumed by one page flip */
+.scrollflip {
+	position: relative;
+	--scroll-per-page: 70vh;
 }
 
-.scrollflip__pin{
+.scrollflip__pin {
 	padding-top: 30px;
-	position:sticky;
-	top:0;
-	height:100vh;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	overflow:hidden;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
 
-/* ================================================================
-	 Reference stage: 680x480, matching the original #all/#page-flip
-	 box model exactly (300x400 window + 40/40/40/340 padding).
-	 Resize the whole effect uniformly with --pf-scale rather than
-	 independent width/height — the curl math below is pixel-specific.
-	 ================================================================ */
-.pf-stage-outer{
-	width:calc(680px * var(--pf-scale, 1));
-	height:calc(480px * var(--pf-scale, 1));
-	max-width:92vw;
-	position:relative;
-}
-.pf-stage{
-	width:680px;
-	height:480px;
-	position:relative;
-	transform:scale(var(--pf-scale, 1));
-	transform-origin:top left;
+.pf-stage-outer {
+	width: calc(680px * var(--pf-scale, 1));
+	height: calc(480px * var(--pf-scale, 1));
+	max-width: 92vw;
+	position: relative;
 }
 
-/* One .pf-window = one full flip unit (equivalent to the original
-	 #page-flip). Stack several for a multi-page sequence; JS sets
-	 --pf-progress (0..1) and z-index on each per its scroll segment. */
-.pf-window{
+.pf-stage {
+	width: 680px;
+	height: 480px;
+	position: relative;
+	transform: scale(var(--pf-scale, 1));
+	transform-origin: top left;
+}
+
+.pf-window {
 	pointer-events: none;
-	position:absolute;
-	top:0;
-	left:0;
-	width:300px;
-	height:400px;
-	padding:40px 40px 40px 340px;
-	overflow:hidden;
-	--pf-progress:0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 400px;
+	padding: 40px 40px 40px 340px;
+	overflow: hidden;
+	--pf-progress: 0;
 }
 
-/* ---- shared math for the two outer rotators (r1 / r3) ---- */
-.pf-r{
+.pf-r {
 	pointer-events: none;
-	position:absolute;
-	z-index:2;
+	position: absolute;
+	z-index: 2;
 	transform-origin: calc(1315px + 255px * var(--pf-progress)) 500px;
 	transform:
 		translate(calc(-1030px - 255px * var(--pf-progress)), -500px)
 		rotate(calc(-32deg + 32deg * var(--pf-progress)));
 }
 
-.pf-canvas{
-	width:1285px;
-	height:1388px;
-	overflow:hidden;
+.pf-canvas {
+	width: 1285px;
+	height: 1388px;
+	overflow: hidden;
 	pointer-events: none;
 }
 
-/* p1 > div */
-.pf-canvas-inner--front{
-	position:relative;
-	width:285px;
-	height:388px;
-	background:var(--pf-paper);
-	transform-origin:285px 0;
+.pf-canvas-inner--front {
+	position: relative;
+	width: 285px;
+	height: 388px;
+	background: var(--pf-paper);
+	transform-origin: 285px 0;
 	transform:
 		translate(calc(1030px + 255px * var(--pf-progress)), 500px)
 		rotate(calc(32deg - 32deg * var(--pf-progress)));
 }
 
-/* p3 > div */
-.pf-canvas-inner--back{
+.pf-canvas-inner--back {
 	pointer-events: none;
-	position:relative;
-	width:285px;
-	height:388px;
-	background:var(--pf-paper);
-	transform-origin:0 0;
+	position: relative;
+	width: 285px;
+	height: 388px;
+	background: var(--pf-paper);
+	transform-origin: 0 0;
 	pointer-events: none;
 	transform:
 		translate(calc(1255px - 255px * var(--pf-progress)), 500px)
 		rotate(calc(-32deg + 32deg * var(--pf-progress)));
 }
 
-/* p1 > div > div (fold edge shading) — positioned so it overlays
-	 the content instead of pushing it around in normal flow */
-.pf-edge-fade{
-	position:absolute;
-	top:0; left:0;
-	width:10px;
-	height:388px;
-	background:linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
-	pointer-events:none;
-}
-/* p3 > div > div */
-.pf-edge-fade--right{
-	left:auto;
-	right:0;
-	width:9px;
-	height:388px;
-	background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.20));
+.pf-edge-fade {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 388px;
+	background: linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
+	pointer-events: none;
 }
 
-/* p2 > div — the static revealed face underneath */
-.pf-page-face{
-	width:285px;
-	height:388px;
-	position:absolute;
-	z-index:1;
-	box-shadow:0 0 11px rgba(0,0,0,.5);
-	background:var(--pf-paper);
+.pf-edge-fade--right {
+	left: auto;
+	right: 0;
+	width: 9px;
+	height: 388px;
+	background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.20));
 }
 
-.pf-shadow{
-	width:285px;
-	height:388px;
-	position:absolute;
-	overflow:hidden;
-	z-index:3;
+.pf-page-face {
+	width: 285px;
+	height: 388px;
+	position: absolute;
+	z-index: 1;
+	box-shadow: 0 0 11px rgba(0,0,0,.5);
+	background: var(--pf-paper);
 }
 
-/* #s3 */
-.pf-shadow--s3{
+.pf-shadow {
+	width: 285px;
+	height: 388px;
+	position: absolute;
+	overflow: hidden;
+	z-index: 3;
+}
+
+.pf-shadow--s3 {
 	transform-origin: calc(70px + 255px * var(--pf-progress)) 500px;
 	transform:
 		translate(calc(215px - 255px * var(--pf-progress)), -500px)
 		rotate(calc(-32deg + 32deg * var(--pf-progress)))
 		translate(40px, 0);
 }
-/* #sp3 */
-.pf-shadow-gradient--sp3{
-	width:calc(25px - 14px * var(--pf-progress));
-	height:1000px;
-	overflow:hidden;
-	background:linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
+
+.pf-shadow-gradient--sp3 {
+	width: calc(25px - 14px * var(--pf-progress));
+	height: 1000px;
+	overflow: hidden;
+	background: linear-gradient(to right, rgba(0,0,0,.25), rgba(0,0,0,0));
 }
 
-/* #s4 wraps #s2, fades out roughly twice as fast as the main flip */
-.pf-shadow--s4{
+.pf-shadow--s4 {
 	opacity: calc(1 - min(1, var(--pf-progress) * 2));
 }
-/* #s2 */
-.pf-shadow--s2{
+
+.pf-shadow--s2 {
 	transform-origin: calc(45px + 255px * var(--pf-progress)) 500px;
 	transform:
 		translate(calc(240px - 255px * var(--pf-progress)), -500px)
 		rotate(calc(-32deg + 32deg * var(--pf-progress)));
 }
-/* #sp2 */
-.pf-shadow-gradient--sp2{
-	width:15px;
-	height:1000px;
-	overflow:hidden;
-	background:linear-gradient(to left, rgba(0,0,0,.18), rgba(0,0,0,0));
+
+.pf-shadow-gradient--sp2 {
+	width: 15px;
+	height: 1000px;
+	overflow: hidden;
+	background: linear-gradient(to left, rgba(0,0,0,.18), rgba(0,0,0,0));
 }
 
-/* readable content sitting on the revealed (p2) face */
-.pf-page-content{
-	padding:8% 9%;
-	height:100%;
-	position:relative;
+.pf-page-content {
+	padding: 8% 9%;
+	height: 100%;
+	position: relative;
 	pointer-events: auto;
 }
-.pf-kicker{
-	display:block;
-	font-size:.65rem;
-	letter-spacing:.14em;
-	text-transform:uppercase;
-	color:var(--pf-accent);
-	margin-bottom:.6em;
+
+.pf-kicker {
+	display: block;
+	font-size: 0.65rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--pf-accent);
+	margin-bottom: 0.6em;
 	padding-top: 50px;
 	text-decoration: underline;
 	cursor: pointer;
 }
+
 .pf-kicker:hover {
 	color: red;
 }
-.pf-heading{
+
+.pf-heading {
 	padding-top: 100px;
 	padding-bottom: 20px;
-	margin:0 0 .4em;
-	font-weight:400;
-	font-size:1.2rem;
-	color:var(--pf-ink);
+	margin: 0 0 0.4em;
+	font-weight: 400;
+	font-size: 1.2rem;
+	color: var(--pf-ink);
 }
-.pf-text{
-	margin:0;
-	font-size:.78rem;
-	line-height:1.6;
-	color:#4a4032;
+
+.pf-text {
+	margin: 0;
+	font-size: 0.78rem;
+	line-height: 1.6;
+	color: #4a4032;
 }
+
 .pf-img {
-	padding-top: 50px;
 	width: 100%;
 	aspect-ratio: 1 / 1;
+	padding-top: 50px;
 	object-fit: cover;
 	z-index: 5;
 }
 
 .pf-img.moved {
-	object-position: 36% -30%;
+	object-position: 50% -30%;
+	z-index: 5;
 }
 
 /*---------------------------------------
@@ -838,44 +790,33 @@ ROTATING GALLERY
 	height: 500px;
 	padding: 0;
 	margin-top: -140px;
-
 	position: relative;
-
 	perspective: 1200px;
 	perspective-origin: 50% 50%;
-
 	transform-style: preserve-3d;
+}
+
+.orbit-stage:hover .orbit-item {
+	animation-play-state: paused;
 }
 
 .orbit-item {
 	position: absolute;
-
 	top: 50%;
 	left: 50%;
-
 	width: 120px;
 	height: 120px;
-
 	margin: -60px 0 0 -60px;
-
 	transform-style: preserve-3d;
-
-	/*
-	 * Each item gets its own starting angle.
-	 * Change --total in the Blade below if needed.
-	 */
 	--angle: 0deg;
-
 	animation: orbit 48s linear infinite;
 }
 
 .orbit-item img {
 	width: 180px;
 	height: 180px;
-
 	object-fit: cover;
 	display: block;
-
 	border-radius: 8px;
 }
 
@@ -896,12 +837,6 @@ ROTATING GALLERY
 .orbit-item:nth-child(15) { animation-delay: -42s; }
 .orbit-item:nth-child(16) { animation-delay: -45s; }
 
-/*
- * Smooth circular orbit.
- *
- * Instead of manually specifying 8 positions,
- * we calculate the position mathematically.
- */
 @keyframes orbit {
 	from {
 		transform:
@@ -995,7 +930,6 @@ GALLERY
     grid-area: 1 / 1;
 }
 
-/* Front */
 .flip-card img {
     display: block;
     width: 100%;
@@ -1005,7 +939,6 @@ GALLERY
     -webkit-backface-visibility: hidden;
 }
 
-/* Back */
 .flip-card-back {
     display: flex;
     justify-content: center;
@@ -1039,10 +972,8 @@ GALLERY
 }
 
 .btn-close {
-    /*position:absolute;*/
 	padding: 25px 25px 0 0;
     z-index:100;
-    /*filter:invert(1);*/
 }
 
 /*---------------------------------------
@@ -1254,7 +1185,15 @@ SCREEN SIZE ACCOMIDATION
 -----------------------------------------*/
 
 @media (prefers-reduced-motion: reduce){
-	.scrollflip__pin{ position:relative; height:auto; padding:4rem 0; }
+	.scrollflip__pin{
+		position: relative;
+		height: auto;
+		padding: 4 rem 0;
+	}
+	.scroll-list li {
+		opacity: 1;
+		transform: none;
+	}
 }
 
 @media (max-width: 1400px)
@@ -1262,6 +1201,14 @@ SCREEN SIZE ACCOMIDATION
 	.scroll-list li {
 		font-size: 26px;
 		margin-bottom: 10px;
+	}
+
+	.athumb {
+		height: 200px;
+	}
+
+	.athumb .item-img-bg img {
+		height: 300px;
 	}
 }
 
@@ -1393,6 +1340,31 @@ SCREEN SIZE ACCOMIDATION
 	.articles {
 		padding-inline: 20px;
 	}
+	
+	.listicle {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.athumb {
+		height: 250px;
+	}
+
+	.athumb .item-img-bg img {
+		height: 350px;
+	}
+	
+	.magbanner {
+		width: 80%;
+	}
+
+	.series-section .text-part {
+		padding-block: 60px;
+	}
+
+	.series-section img {
+		width: 80%;
+	}
 }
 
 @media (max-width: 567.20px)
@@ -1501,11 +1473,3 @@ SCREEN SIZE ACCOMIDATION
 		border: 2px solid transparent;
 	}
 }
-
-/*
-576px: Small screens (landscape phones).
-768px: Medium screens (tablets).
-992px: Large screens (desktops).
-1200px: Extra large screens (large desktops).
-1400px: Extra extra large screens (enormous monitors).
-*/

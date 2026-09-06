@@ -17,9 +17,9 @@ class HomeController
 			'صانع محتوى',
 			'مدرب رياضي',
 			'مغامر ورحالة',
-			'متخصص في دول أمريكا اللاتينية',
+			'متخصص في دول أميركا اللاتينية',
 			'متحدث تحفيزي',
-			'دكتوراه في الذكاء الاصطناعي',
+			'دكتوراة في الذكاء الاصطناعي',
 			'رسالتي: عالم متسامح'
 		];
 		$pointersEN = [
@@ -33,22 +33,22 @@ class HomeController
 		];
 
 		$photos = [
-			'/images/Rot1.jpeg',
-			'/images/Rot2.jpeg',
-			'/images/Rot3.jpeg',
-			'/images/Rot4.jpeg',
-			'/images/Rot5.jpeg',
-			'/images/Rot6.jpeg',
-			'/images/Rot7.jpeg',
-			'/images/Rot8.jpeg',
-			'/images/Rot9.jpeg',
-			'/images/Rot10.jpeg',
-			'/images/Rot11.jpeg',
-			'/images/Rot12.jpeg',
-			'/images/Rot13.jpeg',
-			'/images/Rot14.jpeg',
-			'/images/Rot15.jpeg',
-			'/images/Rot16.jpeg',
+			['/images/Rot1.jpeg', '/gallery/2016'],
+			['/images/Rot2.jpeg', '/gallery/2017'],
+			['/images/Rot3.jpeg', '/gallery/2016'],
+			['/images/Rot4.jpeg', '/gallery/2014'],
+			['/images/Rot5.jpeg', '/gallery/2018'],
+			['/images/Rot6.jpeg', '/gallery/2016'],
+			['/images/Rot7.jpeg', '/gallery/2018'],
+			['/images/Rot8.jpeg', '/gallery/2019'],
+			['/images/Rot9.jpeg', '/gallery/2019'],
+			['/images/Rot10.jpeg', '/gallery/2023'],
+			['/images/Rot11.jpeg', '/gallery/2018'],
+			['/images/Rot12.jpeg', '/gallery/2015'],
+			['/images/Rot13.jpeg', '/gallery/2018'],
+			['/images/Rot14.jpeg', '/gallery/2016'],
+			['/images/Rot15.jpeg', '/gallery/2015'],
+			['/images/Rot16.jpeg', '/gallery/2018'],
 		];
 
 		$records = [

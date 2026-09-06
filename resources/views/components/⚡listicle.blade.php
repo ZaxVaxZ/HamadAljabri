@@ -11,13 +11,26 @@ new class extends Component
     use WithPagination;
 
     public int $perPage = 15;
-
     public string $origin;
     public string $type;
     public string $logo = '';
     public string $latest = 'true';
 	public string $lang = '';
     public bool $others = false;
+	public array $translations = [
+		'January' => 'يناير',
+		'February' => 'فبراير',
+		'March' => 'مارس',
+		'April' => 'أبريل',
+		'May' => 'ماي',
+		'June' => 'يونيو',
+		'July' => 'يوليو',
+		'August' => 'أغسطس',
+		'September' => 'سبتمبر',
+		'October' => 'أكتوبر',
+		'November' => 'نوفمبر',
+		'December' => 'ديسمبر',
+	];
 
     public function render()
     {
@@ -56,6 +69,7 @@ new class extends Component
         ]);
     }
 };
+
 ?>
 
 <div id="pager" class="pager d-flex flex-column"
@@ -88,7 +102,9 @@ new class extends Component
 				<div class="atext">
 					<span class="truncate-3">{{ $item->title }}</span>
 					<p style="padding-top: 4px; font-size: 16px;">
-						{{ $item->created_at->format('d/m/Y') }}
+						{{ app()->getLocale() == 'ar' ? 
+							$translations[$item->created_at->format('F')] . $item->created_at->format(' d، Y') :
+							$item->created_at->format('F d, Y') }}
 					</p>
 				</div>
 			</a>

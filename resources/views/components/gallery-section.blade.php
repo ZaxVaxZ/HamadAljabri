@@ -5,9 +5,9 @@
 	<div class="orbiter w-full d-flex flex-row justify-content-center" dir="ltr">
 		<div class="orbit-stage">
 			@foreach ($photos as $photo)
-				<div class="orbit-item">
-					<img src="{{ Storage::url($photo) }}" alt="" />
-				</div>
+				<a href="{{ $photo[1] }}" class="orbit-item">
+					<img src="{{ Storage::url($photo[0]) }}" alt="" />
+				</a>
 			@endforeach
 		</div>
 	</div>
