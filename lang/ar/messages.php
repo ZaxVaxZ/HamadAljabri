@@ -4,7 +4,7 @@ return [
 	'lang' => 'English',
 	'name' => 'د. حمد الجابري',
     'aboutsection' => 'تعرف',
-    'about' => 'عن',
+    'about' => 'تعرف على',
     'books' => 'المؤلفات',
     'contact' => 'التواصل',
     'contactwith' => 'تواصل مع',

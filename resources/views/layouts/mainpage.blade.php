@@ -46,6 +46,10 @@
 			{{ $slot }}
         </main>
 
+		<button id="backToTop" class="back-to-top" aria-label="{{ __('messages.backtotop') }}" title="{{ __('messages.backtotop') }}">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+
 		<x-footer dark="{{ $darkfoot }}" />
 
 		@livewireScripts

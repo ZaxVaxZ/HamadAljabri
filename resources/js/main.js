@@ -8,17 +8,7 @@ toggle.addEventListener('click', () => {
 
 		toggle.setAttribute('aria-expanded', isOpen);
 });
-/*
-	Generic controller for any number of .scrollflip sections on the page.
-	For each .scrollflip:
-		- reads its .pf-window children (in DOM order = flip order)
-		- sizes the wrapper's scroll height to (windowCount * --scroll-per-page)
-			so the section is pinned for exactly that much scroll distance
-		- on scroll, computes 0..1 progress per window, writes it to that
-			window's --pf-progress custom property (CSS does the actual curl
-			interpolation via calc()), and drops a finished window's z-index
-			so the next one underneath becomes visible
-*/
+
 (function () {
 	function pxFromCss(value, refEl) {
 		var probe = document.createElement('div');
@@ -52,11 +42,10 @@ toggle.addEventListener('click', () => {
 		}
 
 		function layout() {
-
-		const scrollEndDelay = 300;
-		var perPage = scrollPerPageInPx();
-		var totalScroll = perPage * n + window.innerHeight + scrollEndDelay;
-		section.style.height = totalScroll + 'px';
+			const scrollEndDelay = 300;
+			var perPage = scrollPerPageInPx();
+			var totalScroll = perPage * n + window.innerHeight + scrollEndDelay;
+			section.style.height = totalScroll + 'px';
 		}
 
 		function update() {
@@ -64,14 +53,14 @@ toggle.addEventListener('click', () => {
 			var perPage = scrollPerPageInPx();
 			var totalFlipDistance = perPage * n;
 
-		const scrollStartDelay = 200;
+			const scrollStartDelay = 200;
 
 			var scrolled = -rect.top;
 			if (scrolled <= 0) scrolled = 0;
-		if (scrolled < scrollStartDelay) scrolled = 0;
-		if (scrolled >= scrollStartDelay) scrolled -= scrollStartDelay;
+			if (scrolled < scrollStartDelay) scrolled = 0;
+			if (scrolled >= scrollStartDelay) scrolled -= scrollStartDelay;
 			if (scrolled > totalFlipDistance) scrolled = totalFlipDistance;
-		scrolled += perPage;
+			scrolled += perPage;
 
 			var globalProgress = scrolled / perPage; // 0..n across all windows
 
@@ -89,28 +78,16 @@ toggle.addEventListener('click', () => {
 
 		var ticking = false;
 		//const element = document.querySelector('#fixednav');
-		//const backToTop = document.getElementById('backToTop');
-		var aboutText = document.getElementById('aboutText');
-		var triggerPosition = 500;
+		const backToTop = document.getElementById('backToTop');
+		backToTop.addEventListener('click', () => {
+			window.scrollTo(0, 0);
+		});
 
 		function onScroll() {
 			if (!ticking) {
 				requestAnimationFrame(function () { update(); ticking = false; });
 				ticking = true;
 			}
-			
-			aboutText.classList.toggle(
-				'd-none',
-				window.scrollY >= triggerPosition
-			);
-			aboutText.classList.toggle(
-				'visible',
-				window.scrollY < 100
-			);
-			//backToTop.classList.toggle(
-			//    'visible',
-			//    window.scrollY >= triggerPosition
-			//);
 		}
 
 		layout();
@@ -197,3 +174,37 @@ document.addEventListener('livewire:init', () => {
 		}
 	});
 });
+
+const backToTop = document.getElementById('backToTop');
+const aboutText = document.getElementById('aboutText');
+const triggerPosition = 500;
+
+if (backToTop) {
+	backToTop.addEventListener('click', () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	});
+}
+
+window.addEventListener('scroll', function () {
+	if (backToTop) {
+		backToTop.classList.toggle(
+			'visible',
+			window.scrollY >= triggerPosition
+		);
+	}
+
+	if (aboutText) {
+		aboutText.classList.toggle(
+			'd-none',
+			window.scrollY >= triggerPosition
+		);
+
+		aboutText.classList.toggle(
+			'visible',
+			window.scrollY < 100
+		);
+	}
+}, { passive: true });
