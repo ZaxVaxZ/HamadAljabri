@@ -36,7 +36,7 @@ class HomeController
 			['/images/Rot1.jpeg', '/gallery/2016'],
 			['/images/Rot2.jpeg', '/gallery/2017'],
 			['/images/Rot3.jpeg', '/gallery/2016'],
-			['/images/Rot4.jpeg', '/gallery/2014'],
+			['/images/Rot4.jpeg', '/gallery/2017'],
 			['/images/Rot5.jpeg', '/gallery/2018'],
 			['/images/Rot6.jpeg', '/gallery/2016'],
 			['/images/Rot7.jpeg', '/gallery/2018'],
@@ -157,7 +157,7 @@ class HomeController
 			$year = -1;
 			$album = ContentBlock::ofType('photo')
 				->distinct()
-				->orderBy('year', 'desc')
+				->orderBy('origin', 'desc')
 				->pluck('origin');
 		}
 
