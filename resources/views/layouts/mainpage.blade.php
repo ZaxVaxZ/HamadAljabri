@@ -8,8 +8,8 @@
         <meta name="author" content="{{ __('messages.name') }}">
         <meta name="description" content="{{ __('messages.description') }}">
 
-		<link rel="icon" type="image/svg+xml" href="{{ asset('logo.svg') }}">
-		<link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+		<link rel="icon" type="image/svg+xml" href="{{ asset('logo.png') }}">
+		<link rel="icon" href="{{ asset('logo.png') }}" sizes="any">
 		<link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
 		<title>{{ __('messages.name') }}</title>
 
