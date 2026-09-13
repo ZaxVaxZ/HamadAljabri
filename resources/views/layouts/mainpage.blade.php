@@ -8,8 +8,8 @@
         <meta name="author" content="{{ __('messages.name') }}">
         <meta name="description" content="{{ __('messages.description') }}">
 
-		<link rel="icon" href="{{ asset('logo.png') }}" sizes="any">
-		<link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+		<link rel="icon" href="{{ asset('favicon.png') }}" sizes="any">
+		<link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
 		<title>{{ __('messages.name') }}</title>
 
 			<!-- Open Graph / Facebook -->
