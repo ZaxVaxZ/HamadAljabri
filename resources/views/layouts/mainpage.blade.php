@@ -8,7 +8,6 @@
         <meta name="author" content="{{ __('messages.name') }}">
         <meta name="description" content="{{ __('messages.description') }}">
 
-		<link rel="icon" type="image/svg+xml" href="{{ asset('logo.png') }}">
 		<link rel="icon" href="{{ asset('logo.png') }}" sizes="any">
 		<link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
 		<title>{{ __('messages.name') }}</title>
@@ -19,7 +18,7 @@
 		<meta property="og:url" content="{{ request()->url() }}">
 		<meta property="og:type" content="website">
 		<meta property="og:description" content="{{ __('messages.description') }}">
-		<meta property="og:image" content="{{ asset('assets/images/SelfImage.jpeg') }}">
+		<meta property="og:image" content="{{ Storage::url('images/HamadNoBg.png') }}">
 		<meta property="og:image:width" content="630">
 		<meta property="og:image:height" content="630">
 
@@ -28,7 +27,7 @@
 		<meta name="twitter:url" content="{{ request()->url() }}">
 		<meta name="twitter:title" content="{{ __('messages.name') }}">
 		<meta name="twitter:description" content="{{ __('messages.description') }}">
-		<meta name="twitter:image" content="{{ asset('assets/images/SelfImage.jpeg') }}">
+		<meta name="twitter:image" content="{{ Storage::url('images/HamadNoBg.png') }}">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
