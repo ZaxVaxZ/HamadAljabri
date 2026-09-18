@@ -41,7 +41,7 @@ return [
 	'more_photos' => 'More photos',
 	'backtotop' => 'Back to top',
 	'watchonyoutube' => 'View playlist',
-	'description' => '',
+	'description' => 'Sports Coach, Motivational Speaker, Traveler and Adventurer Specialized in Latin American Countries. PhD in A.I. Content Creator across multiple platforms.',
 	'footerabout' => '',
 	'jobtitle' => '',
 	'qualifiers' => '',

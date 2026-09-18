@@ -18,7 +18,7 @@
 		<meta property="og:url" content="{{ request()->url() }}">
 		<meta property="og:type" content="website">
 		<meta property="og:description" content="{{ __('messages.description') }}">
-		<meta property="og:image" content="{{ Storage::url('images/HamadNoBg.png') }}">
+		<meta property="og:image" content="{{ Storage::url('images/SiteImage.png') }}">
 		<meta property="og:image:width" content="630">
 		<meta property="og:image:height" content="630">
 
@@ -27,8 +27,37 @@
 		<meta name="twitter:url" content="{{ request()->url() }}">
 		<meta name="twitter:title" content="{{ __('messages.name') }}">
 		<meta name="twitter:description" content="{{ __('messages.description') }}">
-		<meta name="twitter:image" content="{{ Storage::url('images/HamadNoBg.png') }}">
+		<meta name="twitter:image" content="{{ Storage::url('images/SiteImage.png') }}">
 
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "{{ __('messages.name') }}",
+				"url": "{{ url('/') }}"
+			}
+		</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "{{ __('messages.name') }}",
+				"url": "{{ url('/') }}",
+				"image": "{{ Storage::url('images/SiteImage.png') }}",
+				"jobTitle": "…",
+				"sameAs": [
+					"https://facebook.com/hamad.aljabri",
+					"https://instagram.com/hamad_al_jabri",
+					"https://x.com/Hamad_AL_Jabri",
+				]
+			}
+		</script>
+
+		<link rel="canonical" href="{{ request()->url() }}">
+		<link rel="alternate" hreflang="en" href="https://en.hamadaljabri.com{{ request()->getRequestUri() }}">
+		<link rel="alternate" hreflang="ar" href="https://ar.hamadaljabri.com{{ request()->getRequestUri() }}">
+		<link rel="alternate" hreflang="x-default" href="https://hamadaljabri.com{{ request()->getRequestUri() }}">
+	
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
