@@ -29,30 +29,6 @@
 		<meta name="twitter:description" content="{{ __('messages.description') }}">
 		<meta name="twitter:image" content="{{ Storage::url('images/SiteImage.png') }}">
 
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "{{ __('messages.name') }}",
-				"url": "{{ url('/') }}"
-			}
-		</script>
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "{{ __('messages.name') }}",
-				"url": "{{ url('/') }}",
-				"image": "{{ Storage::url('images/SiteImage.png') }}",
-				"jobTitle": "…",
-				"sameAs": [
-					"https://facebook.com/hamad.aljabri",
-					"https://instagram.com/hamad_al_jabri",
-					"https://x.com/Hamad_AL_Jabri"
-				]
-			}
-		</script>
-
 		<link rel="canonical" href="{{ request()->url() }}">
 		<link rel="alternate" hreflang="en" href="https://en.hamadaljabri.com{{ request()->getRequestUri() }}">
 		<link rel="alternate" hreflang="ar" href="https://ar.hamadaljabri.com{{ request()->getRequestUri() }}">
