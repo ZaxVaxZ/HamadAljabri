@@ -48,7 +48,7 @@
 				"sameAs": [
 					"https://facebook.com/hamad.aljabri",
 					"https://instagram.com/hamad_al_jabri",
-					"https://x.com/Hamad_AL_Jabri",
+					"https://x.com/Hamad_AL_Jabri"
 				]
 			}
 		</script>
