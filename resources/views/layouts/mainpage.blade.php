@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="{{ __('messages.name') }}">
+        <meta name="author" content="{{ __('messages.purename') }}">
         <meta name="description" content="{{ __('messages.description') }}">
 
 		<link rel="icon" href="{{ asset('favicon.png') }}" sizes="any">
