@@ -1,4 +1,4 @@
-<x-layouts::mainpage>
+<x-layouts::mainpage darkfoot="true">
 	<script>
 		window.__content = @json($recs);
 	</script>

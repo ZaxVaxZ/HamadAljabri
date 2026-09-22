@@ -835,6 +835,7 @@ ROTATING GALLERY
 
 .gallery-section {
 	padding-bottom: 120px;
+	background-color: var(--bg-secondary);
 }
 
 .gallery-section .morelink {
@@ -1049,7 +1050,6 @@ ARTICLES SECTION
 -----------------------------------------*/
 
 .articles {
-	background-color: var(--bg-secondary);
 	padding-inline: 100px;
 }
 
