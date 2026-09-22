@@ -9,9 +9,9 @@
 		@endif
 		<div class="text-part col-12 col-md-6">
 			<p class="section-type">{{ __('messages.series') }}</p>
-			<h2><a href="/episodes/{{ $series->id }}">{{ $series->title }}</a></h2>
+			<h2><a href="/episodes/{{ $series->content }}">{{ $series->title }}</a></h2>
 			<p class="section-desc">{{ $series->description }}</p>
-			<a class="series-link" href="/episodes/{{ $series->id }}">{{ __('messages.watchonyoutube') }}</a>
+			<a class="series-link" href="/episodes/{{ $series->content }}">{{ __('messages.watchonyoutube') }}</a>
 		</div>
 		@if($side == 'left')
 			<div class="img-part col-12 col-md-6 d-flex flex-row justify-content-center align-items-center">
