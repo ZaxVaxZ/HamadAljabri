@@ -17,10 +17,12 @@
 		<span class="nav-item {{ str_contains($highlight, 'media') ? 'active' : '' }}">
 			{{ __('messages.media') }}
 			<div class="menu-dropdown">
-				<a class="subnav {{ $highlight == 'media1' ? 'active' : '' }}" href="/episodes/6">{{ __('messages.movies') }}</a>
-				<a class="subnav {{ $highlight == 'media2' ? 'active' : '' }}" href="/episodes/7">{{ __('messages.tvinterviews') }}</a>
-				<a class="subnav {{ $highlight == 'media3' ? 'active' : '' }}" href="/episodes/8">{{ __('messages.tvcourse') }}</a>
-				<a class="subnav {{ $highlight == 'media4' ? 'active' : '' }}" href="/episodes/9">{{ __('messages.toastmasters') }}</a>
+				<a class="subnav {{ $highlight == 'media1' ? 'active' : '' }}" href="/episodes/292">{{ __('messages.shares') }}</a>
+				<a class="subnav {{ $highlight == 'media2' ? 'active' : '' }}" href="/episodes/6">{{ __('messages.movies') }}</a>
+				<a class="subnav {{ $highlight == 'media3' ? 'active' : '' }}" href="/episodes/7">{{ __('messages.tvinterviews') }}</a>
+				<a class="subnav {{ $highlight == 'media4' ? 'active' : '' }}" href="/episodes/8">{{ __('messages.tvcourse') }}</a>
+				<a class="subnav {{ $highlight == 'media5' ? 'active' : '' }}" href="/episodes/9">{{ __('messages.toastmasters') }}</a>
+				<a class="subnav {{ $highlight == 'media6' ? 'active' : '' }}" href="/episodes/256">{{ __('messages.sports') }}</a>
 			</div>
 		</span>
 		<a class="nav-item {{ $highlight == 'travel' ? 'active' : '' }}" href="/episodes/5" aria-label="travel">
@@ -53,10 +55,12 @@
 		<span class="nav-item {{ str_contains($highlight, 'media') ? 'active' : '' }}">
 			{{ __('messages.media') }}
 			<div class="menu-dropdown">
-				<a class="subnav {{ $highlight == 'media1' ? 'active' : '' }}" href="/episodes/6">{{ __('messages.movies') }}</a>
-				<a class="subnav {{ $highlight == 'media2' ? 'active' : '' }}" href="/episodes/7">{{ __('messages.tvinterviews') }}</a>
-				<a class="subnav {{ $highlight == 'media3' ? 'active' : '' }}" href="/episodes/8">{{ __('messages.tvcourse') }}</a>
-				<a class="subnav {{ $highlight == 'media4' ? 'active' : '' }}" href="/episodes/9">{{ __('messages.toastmasters') }}</a>
+				<a class="subnav {{ $highlight == 'media1' ? 'active' : '' }}" href="/episodes/292">{{ __('messages.movies') }}</a>
+				<a class="subnav {{ $highlight == 'media2' ? 'active' : '' }}" href="/episodes/6">{{ __('messages.movies') }}</a>
+				<a class="subnav {{ $highlight == 'media3' ? 'active' : '' }}" href="/episodes/7">{{ __('messages.tvinterviews') }}</a>
+				<a class="subnav {{ $highlight == 'media4' ? 'active' : '' }}" href="/episodes/8">{{ __('messages.tvcourse') }}</a>
+				<a class="subnav {{ $highlight == 'media5' ? 'active' : '' }}" href="/episodes/9">{{ __('messages.toastmasters') }}</a>
+				<a class="subnav {{ $highlight == 'media6' ? 'active' : '' }}" href="/episodes/256">{{ __('messages.toastmasters') }}</a>
 			</div>
 		</span>
 		<a class="nav-item {{ $highlight == 'travel' ? 'active' : '' }}" href="/episodes/5" aria-label="travel">

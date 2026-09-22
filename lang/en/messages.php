@@ -11,6 +11,8 @@ return [
 	'email' => 'Email Address',
     'interviews' => 'Interviews',
 	'photos' => 'Photos',
+	'shares' => 'Activities',
+	'sports' => 'Sports',
 	'photoshead' => 'Photo Gallery',
 	'series' => 'Video Series',
 	'travel' => 'Travel & Trips',

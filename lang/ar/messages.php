@@ -11,6 +11,8 @@ return [
     'contactwith' => 'تواصل مع',
 	'email' => 'عنوان البريد الإلكتروني',
     'interviews' => 'المقابلات',
+	'shares' => 'مشاركات',
+	'sports' => 'الرياضة',
 	'photos' => 'الصور',
 	'photoshead' => 'ألبوم الصور',
 	'series' => 'سلسلة فيديوهات',
