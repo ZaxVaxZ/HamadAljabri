@@ -12,6 +12,7 @@ return [
     'interviews' => 'Interviews',
 	'photos' => 'Photos',
 	'shares' => 'Activities',
+	'seriously' => 'Seriously?',
 	'sports' => 'Sports',
 	'photoshead' => 'Photo Gallery',
 	'series' => 'Video Series',

@@ -4,6 +4,7 @@
 		'عيال زايد' => 'contentcreation2',
 		'عالم حمد' => 'contentcreation3',
 		'حمد والذكاء الاصطناعي' => 'contentcreation4',
+		'معقولة؟' => 'contentcreation5',
 		'المشاركات' => 'media1',
 		'الأفلام التجريبية' => 'media2',
 		'المقابلات' => 'media3',

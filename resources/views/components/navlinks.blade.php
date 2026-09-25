@@ -12,6 +12,7 @@
 				<a class="subnav {{ $highlight == 'contentcreation2' ? 'active' : '' }}" href="/episodes/3">{{ __('messages.3yal') }}</a>
 				<a class="subnav {{ $highlight == 'contentcreation3' ? 'active' : '' }}" href="/episodes/4">{{ __('messages.world') }}</a>
 				<a class="subnav {{ $highlight == 'contentcreation4' ? 'active' : '' }}" href="/episodes/229">{{ __('messages.hamadai') }}</a>
+				<a class="subnav {{ $highlight == 'contentcreation5' ? 'active' : '' }}" href="/episodes/297">{{ __('messages.seriously') }}</a>
 			</div>
 		</span>
 		<span class="nav-item {{ str_contains($highlight, 'media') ? 'active' : '' }}">
@@ -50,6 +51,7 @@
 				<a class="subnav {{ $highlight == 'contentcreation2' ? 'active' : '' }}" href="/episodes/3">{{ __('messages.3yal') }}</a>
 				<a class="subnav {{ $highlight == 'contentcreation3' ? 'active' : '' }}" href="/episodes/4">{{ __('messages.world') }}</a>
 				<a class="subnav {{ $highlight == 'contentcreation4' ? 'active' : '' }}" href="/episodes/229">{{ __('messages.hamadai') }}</a>
+				<a class="subnav {{ $highlight == 'contentcreation5' ? 'active' : '' }}" href="/episodes/297">{{ __('messages.seriously') }}</a>
 			</div>
 		</span>
 		<span class="nav-item {{ str_contains($highlight, 'media') ? 'active' : '' }}">

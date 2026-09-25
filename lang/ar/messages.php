@@ -12,6 +12,7 @@ return [
 	'email' => 'عنوان البريد الإلكتروني',
     'interviews' => 'المقابلات',
 	'shares' => 'المشاركات',
+	'seriously' => 'معقولة؟',
 	'sports' => 'الرياضة',
 	'photos' => 'الصور',
 	'photoshead' => 'ألبوم الصور',
